@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+    #########################################################################################
+    copyright by Herbert Wagner 01/2016 for followme car (Flightgear)
+    ##########################################################################################
+-->
+<PropertyList>
+  <particlesystem>
+    <name>drifting-smoke-snow</name>
+    
+    <texture>snow.png</texture>
+    
+    <condition>
+      <and>
+	<or>
+	<greater-than>
+	  <property>sim/multiplay/generic/float[9]</property>
+	  <value>8000</value>
+	</greater-than>
+	<less-than>
+	  <property>sim/multiplay/generic/float[9]</property>
+	  <value>-8000</value>
+	</less-than>
+	</or>
+	<or>
+	<equals>
+	  <property>sim/multiplay/generic/string[1]</property>
+	  <value>Lake</value>
+	</equals>
+	<equals>
+	  <property>sim/multiplay/generic/string[1]</property>
+	  <value>PackIce</value>
+	</equals>
+	</or>
+       </and>
+      </condition>
+    
+    <emissive>false</emissive>
+    <lighting>false</lighting>
+    <align>billboard</align>
+    <attach>world</attach>
+    <placer>
+      <type>point</type>
+    </placer>
+    <shooter>
+      <theta-min-deg>89</theta-min-deg>
+      <theta-max-deg>-120</theta-max-deg>
+      <phi-min-deg>-10</phi-min-deg>
+      <phi-max-deg> 10</phi-max-deg>
+      <speed-mps>
+	<value>32</value>
+	<spread>3.5</spread>
+      </speed-mps>
+      <rotation-speed>
+	<x-min-deg-sec>0</x-min-deg-sec>
+	<y-min-deg-sec>0</y-min-deg-sec>
+	<z-min-deg-sec>0</z-min-deg-sec>
+	<x-max-deg-sec>0</x-max-deg-sec>
+	<y-max-deg-sec>0</y-max-deg-sec>
+	<z-max-deg-sec>0</z-max-deg-sec>
+      </rotation-speed>
+    </shooter>
+    <counter>
+      <particles-per-sec>
+	<value>40</value>
+	<spread>20</spread>
+      </particles-per-sec>
+    </counter>
+    <particle>
+      <start>
+	<color>
+	  <red><value>0.870</value></red>
+	  <green><value>0.870</value></green>
+	  <blue><value>0.870</value></blue>
+	  <alpha><value>0.60</value></alpha>
+	</color>
+	<size>
+	  <value>0.25</value>
+	</size>
+      </start>
+      <end>
+	<color>
+	  <red><value>0.7</value></red>
+	  <green><value>0.7</value></green>
+	  <blue><value>0.7</value></blue>
+	  <alpha><value>0.05</value></alpha>
+	</color>
+	<size>
+	  <value>5.0</value>
+	</size>
+      </end>
+      <life-sec>
+	<value>15</value>
+      </life-sec>
+      <mass-kg>0.375</mass-kg>
+      <radius-m>0.40</radius-m>
+    </particle>
+    <program>
+      <fluid>air</fluid>
+      <gravity>true</gravity>
+      <wind>true</wind>
+    </program>
+  </particlesystem>
+</PropertyList>

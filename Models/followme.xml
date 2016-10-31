@@ -1,0 +1,1068 @@
+<PropertyList>
+ <!--
+    #########################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for followme car (Flightgear)
+    ##########################################################################################
+-->
+<path>followme.ac</path>
+
+<sound>
+  <path>Aircraft/followme/Sounds/followme-sound.xml</path>
+</sound> 
+
+<nasal>
+  <load>
+    var livery_update = aircraft.livery_update.new("Aircraft/followme/Models/Liveries", 10);
+    var update = aircraft.overlay_update.new();
+    update.add("Aircraft/followme/Models/Sign", "sim/multiplay/generic/string[2]");
+  </load>   
+  <unload>
+    livery_update.stop();
+    update.stop();
+  </unload>   
+</nasal>
+
+
+  
+  
+<animation>
+ <type>material</type>
+ <object-name>sign</object-name>
+ <property-base>sim/model/message</property-base>
+ <texture-prop>texture-message</texture-prop>
+ <texture>follow_me.png</texture>
+ <emission>
+    <red>   1 </red>
+    <green> 1 </green>
+    <blue>  1 </blue>
+  </emission>
+</animation>
+
+
+
+<animation>
+  <type>material</type>
+  <object-name>ldoor_1</object-name>
+  <object-name>Mesh11_2</object-name>  
+  <object-name>door.rl_1</object-name>
+  <object-name>door.rr_1</object-name>
+  <object-name>Mesh76.004_1</object-name>
+  <property-base>sim/model/livery</property-base>
+  <texture-prop>texture</texture-prop>
+  <texture>followmeoutside.png</texture>  
+  <emission>
+    <factor-prop>sim/time/sun-angle-rad</factor-prop>
+    <red>   0.1 </red>
+    <green> 0.1 </green>
+    <blue>  0.1 </blue>
+  </emission>
+</animation>
+
+
+
+<model> 
+ <path>Aircraft/followme/Models/warninglight.xml</path>
+ <offsets> 
+  <x-m> 3.42</x-m>
+  <y-m>-0.5</y-m>
+  <z-m> 1.75</z-m>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/warninglight.xml</path>
+ <offsets> 
+  <x-m> 3.42</x-m>
+  <y-m> 0.5</y-m>
+  <z-m> 1.75</z-m>
+ </offsets>
+</model>
+
+<!-- INSTRUMENTS -->
+
+<model> 
+ <path>Aircraft/followme/Models/Instruments/fuelgauge.xml</path>
+ <offsets> 
+  <x-m>1.31</x-m>
+  <y-m>-0.25</y-m>
+  <z-m>1.01</z-m>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Instruments/Switch-Lights/fuel-reserve.xml</path>
+ <offsets> 
+  <x-m>1.286</x-m>
+  <y-m>-0.27</y-m>
+  <z-m>1.000</z-m>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Instruments/speedometer.xml</path>
+ <offsets> 
+  <x-m>1.31</x-m>
+  <y-m>-0.38</y-m>
+  <z-m>1.03</z-m>
+ </offsets>
+</model>
+  
+<!-- STEERINGWHEEL -->
+
+<animation>  
+ <type>rotate</type>  
+ <object-name>steeringwheel</object-name>
+ <property>surface-positions/rudder-pos-norm</property>
+ <factor>100</factor>
+ <axis>
+  <x1-m>1.505</x1-m>
+  <y1-m>-0.327</y1-m>
+  <z1-m>0.965</z1-m>
+  <x2-m>1.414</x2-m>
+  <y2-m>-0.33</y2-m>
+  <z2-m>0.927</z2-m>
+ </axis>
+</animation>
+
+<!-- FRONT WHEEL LEFT -->
+
+<animation>
+ <type>rotate</type>
+ <object-name>Tyre1</object-name>
+ <property>surface-positions/rudder-pos-norm</property>
+ <factor>-40</factor>
+ <center>
+  <x-m> 0.681</x-m>
+  <y-m>-0.557</y-m>
+  <z-m> 0.289</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>0.0</y>
+  <z>1.0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>translate</type>
+ <object-name>Tyre1</object-name>
+ <property>gear/gear[0]/compression-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>	
+   <dep>0</dep>
+  </entry>
+  <entry>	
+	<ind>1.00</ind>
+	<dep>0.2</dep>
+  </entry>  
+ </interpolation>
+ <axis>
+  <x>0</x>	
+  <y>0</y>
+  <z>1</z>	
+ </axis>
+</animation>
+ 
+<animation>
+ <type>spin</type>
+ <object-name>Tyre1</object-name>
+ <property>sim/multiplay/generic/float[11]</property>
+ <factor>-6</factor>
+ <center>
+  <x-m>0.682</x-m>
+  <y-m>0.627</y-m>
+  <z-m>0.291</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>1.0</y>
+  <z>0.0</z>
+ </axis>
+</animation>
+
+<!-- FRONT WHEEL RIGHT -->
+
+<animation>
+ <type>rotate</type>
+ <object-name>Tyre2</object-name>
+ <property>surface-positions/rudder-pos-norm</property>
+ <factor>-40</factor>
+ <center>
+  <x-m> 0.681</x-m>
+  <y-m> 0.557</y-m>
+  <z-m> 0.289</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>0.0</y>
+  <z>1.0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>translate</type>
+ <object-name>Tyre2</object-name>
+ <property>gear/gear[1]/compression-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>0</dep>
+  </entry>
+  <entry>
+   <ind>1.00</ind>
+   <dep>0.2</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x>0</x>
+  <y>0</y>
+  <z>1</z>
+ </axis>
+</animation>
+ 
+<animation>
+ <type>spin</type>
+ <object-name>Tyre2</object-name> 
+ <property>sim/multiplay/generic/float[11]</property>
+ <factor>-6</factor>
+ <center>
+  <x-m>0.682</x-m>
+  <y-m>-0.627</y-m>
+  <z-m>0.291</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>1.0</y>
+  <z>0.0</z>
+ </axis>
+</animation>
+ 
+<!-- REAR WHEEL LEFT -->
+
+<animation>
+ <type>translate</type>
+ <object-name>Tyre3</object-name>
+ <property>gear/gear[2]/compression-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>0</dep>
+  </entry>
+  <entry>
+   <ind>1.00</ind>
+   <dep>0.2</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x>0</x>
+  <y>0</y>
+  <z>1</z>
+ </axis>
+</animation>
+ 
+<animation>  
+ <type>spin</type>
+ <object-name>Tyre3</object-name>
+ <property>sim/multiplay/generic/float[11]</property>
+ <factor>-6</factor>
+ <center>
+  <x-m>3.17</x-m>
+  <y-m>0.625</y-m>
+  <z-m>0.282</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>1.0</y>
+  <z>0.0</z>
+ </axis>
+</animation>
+ 
+<!-- REAR WHEEL RIGHT -->
+
+<animation>
+ <type>translate</type>
+ <object-name>Tyre4</object-name>
+ <property>gear/gear[3]/compression-norm</property>
+ <interpolation>
+  <entry>
+   <ind>0.0</ind>
+   <dep>0</dep>
+  </entry>
+  <entry>
+   <ind>1.00</ind>
+   <dep>0.2</dep>
+  </entry>
+ </interpolation>
+ <axis>
+  <x>0</x>
+  <y>0</y>
+  <z>1</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>spin</type>
+ <object-name>Tyre4</object-name>
+ <property>sim/multiplay/generic/float[11]</property>
+ <factor>-6</factor>
+ <center>
+  <x-m>3.17</x-m>
+  <y-m>-0.625</y-m>
+  <z-m>0.282</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>1.0</y>
+  <z>0.0</z>
+ </axis>
+</animation>
+
+<!-- DOOR ANIMATIONS -->
+
+<animation>
+  <object-name>ldoor_0.003</object-name>
+  <object-name>Mesh11_0.001</object-name>
+  <object-name>door.rl_0.001</object-name>
+  <object-name>door.rr_0.001</object-name>
+  <object-name>Mesh76.003</object-name>
+</animation>
+
+<animation>
+  <type>noshadow</type>
+  <object-name>ldoor_0.003</object-name>
+  <object-name>Mesh11_0.001</object-name>
+  <object-name>door.rl_0.001</object-name>
+  <object-name>door.rr_0.001</object-name>
+  <object-name>Mesh76.003</object-name>
+</animation>
+
+<!-- working for Rembrandt -->
+
+<effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <condition>
+    <property>sim/rendering/rembrandt/enabled</property>
+  </condition>
+  <object-name>ldoor_0.003</object-name>
+  <object-name>Mesh11_0.001</object-name>
+  <object-name>door.rl_0.001</object-name>
+  <object-name>door.rr_0.001</object-name>
+  <object-name>Mesh76.003</object-name>
+</effect>
+
+<animation>
+  <object-name>ldoor_0.003</object-name>
+  <object-name>Mesh11_0.001</object-name>
+  <object-name>door.rl_0.001</object-name>
+  <object-name>door.rr_0.001</object-name>
+  <object-name>Mesh76.003</object-name>
+</animation>
+
+
+<!-- LEFT FRONT DOOR -->
+
+<animation>
+ <type>pick</type>
+ <object-name>ldoor_0</object-name>
+ <object-name>ldoor_1</object-name>
+ <object-name>ldoor_2</object-name>
+ <object-name>ldoor_0.003</object-name>
+ <visible>true</visible>
+ <action>
+  <button>0</button>
+  <repeatable>false</repeatable>  
+  <binding>
+   <command>nasal</command>
+   <script>doors.frontleft.toggle();</script>
+  </binding>
+ </action>
+</animation>
+ 
+<animation>
+ <type>rotate</type>
+ <object-name>ldoor_0</object-name>
+ <object-name>ldoor_1</object-name>
+ <object-name>ldoor_2</object-name>
+ <object-name>ldoor_0.003</object-name>
+ <property>sim/multiplay/generic/float[2]</property>
+ <factor>-75</factor>
+ <center>
+  <x-m> 1</x-m>
+  <y-m>-0.78</y-m>
+  <z-m> 0</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>0.0</y>
+  <z>1.0</z>
+ </axis>
+</animation>
+
+<!-- RIGHT FRONT DOOR -->
+
+<animation>
+ <type>pick</type>
+ <object-name>rdoor</object-name>
+ 
+ <visible>true</visible>
+ <action>
+  <button>0</button>
+  <repeatable>false</repeatable>  
+  <binding>
+   <command>nasal</command>
+   <script>doors.frontright.toggle();</script>
+  </binding>
+ </action>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>rdoor</object-name>
+ 
+ <property>sim/multiplay/generic/float[3]</property>
+ <factor>75</factor>
+ <center>
+  <x-m>1</x-m>
+  <y-m>0.78</y-m>
+  <z-m>0</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>0.0</y>
+  <z>1.0</z>
+ </axis>
+</animation>
+	
+<!--LEFT REAR DOOR -->
+
+<animation>
+ <type>pick</type>
+ <object-name>door.rl</object-name>
+ <object-name>braking_lights.001</object-name>
+ <visible>true</visible>
+ <action>
+  <button>0</button>
+  <repeatable>false</repeatable>  
+  <binding>
+   <command>nasal</command>
+   <script>doors.rearleft.toggle();</script>
+  </binding>
+ </action>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>door.rl</object-name>
+ <object-name>braking_lights.001</object-name>
+ <object-name>rearwiper</object-name>
+ <property>sim/multiplay/generic/float[4]</property>
+ <factor>-90</factor>
+ <center>
+  <x-m> 3.7</x-m>
+  <y-m>-0.6</y-m>
+  <z-m> 0</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>0.0</y>
+  <z>1.0</z>
+ </axis>
+</animation>
+
+<!-- RIGHT REAR DOOR -->
+
+<animation>
+ <type>pick</type>
+ <object-name>door.rr</object-name>
+ 
+ <visible>true</visible>
+ <action>
+  <button>0</button>
+  <repeatable>false</repeatable>  
+  <binding>
+   <command>nasal</command>
+   <script>doors.rearright.toggle();</script>
+  </binding>
+ </action>
+</animation>
+
+<animation>
+ <type>rotate</type>
+ <object-name>door.rr</object-name>
+ 
+ <property>sim/multiplay/generic/float[5]</property>
+ <factor>90</factor>
+ <center>
+  <x-m>3.7</x-m>
+  <y-m>0.6</y-m>
+  <z-m>0</z-m>
+ </center>
+ <axis>
+  <x>0.0</x>
+  <y>0.0</y>
+  <z>1.0</z>
+ </axis>
+</animation>
+
+<!-- LIGHTS -->
+
+<effect>
+ <inherits-from>Effects/light-cone</inherits-from>
+ <object-name>Cone</object-name>
+</effect>
+
+<effect>
+ <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>Cone</object-name>
+ <object-name>Cone-texture</object-name>
+</effect>
+
+<animation>
+ <type>select</type>
+ <object-name>Cone</object-name>
+ <object-name>Cone-texture</object-name>
+         <condition>
+          <and>
+                <not><property>/sim/rendering/rembrandt/enabled</property></not>
+		<property>sim/multiplay/generic/int[4]</property>
+          </and>
+         </condition>
+</animation>
+
+  <!-- Rembrand light -->
+
+  <model>
+    <path>Aircraft/followme/Models/Instruments/Lights/Al3-Rembrandt_Lights.xml</path>
+    <name>head-light</name>
+    <condition>
+      <and>
+	<property>/sim/rendering/rembrandt/enabled</property>
+	<property>sim/multiplay/generic/int[4]</property>
+      </and>
+    </condition>
+    <offsets>
+      <x-m> 2.10 </x-m>
+      <y-m> -0.50 </y-m>
+      <z-m> 2.0 </z-m>
+      <pitch-deg>0</pitch-deg>
+      <heading-deg>2.5</heading-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/followme/Models/Instruments/Lights/Al3-Rembrandt_Lights.xml</path>
+    <name>head-light</name>
+    <condition>
+      <and>
+	<property>/sim/rendering/rembrandt/enabled</property>
+	<property>sim/multiplay/generic/int[4]</property>
+      </and>
+    </condition>
+    <offsets>
+      <x-m> 2.10 </x-m>
+      <y-m> 1.00 </y-m>
+      <z-m> 2.0 </z-m>
+      <pitch-deg>0</pitch-deg>
+      <heading-deg>2.5</heading-deg>
+    </offsets>
+  </model>
+  
+  <animation>
+    <type>select</type>
+    <object-name>Mesh79L</object-name>
+    <object-name>Mesh80L</object-name>
+    <condition>
+      <not>
+	<property>sim/multiplay/generic/int[19]</property>
+      </not>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>head_lights</object-name>
+    <object-name>head_lightsB</object-name>
+    <condition>
+      <not><property>sim/multiplay/generic/int[4]</property></not>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>head_lightsL</object-name>
+    <condition>
+     <property>sim/multiplay/generic/int[4]</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>head_lightsL</object-name>
+    <emission>
+      <factor-prop>sim/multiplay/generic/int[4]</factor-prop>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>  
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>indicater_left</object-name>
+    <object-name>indicater_right</object-name>
+    <emission>
+      <red>1.0</red>
+      <green>0.8</green>
+      <blue>0.2</blue>
+      <factor-prop>sim/multiplay/generic/int[13]</factor-prop>
+    </emission>
+  </animation>
+  
+<effect>
+ <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>braking_lights</object-name>
+ <object-name>braking_lights.001</object-name>
+</effect>
+
+<animation>
+ <type>material</type>
+ <object-name>braking_lights</object-name>
+ <object-name>braking_lights.001</object-name>
+ <emission>
+  <red>1.0</red>
+  <green>0.0</green>
+  <blue>0.0</blue>
+  <factor-prop>sim/multiplay/generic/int[15]</factor-prop>
+ </emission>
+ <condition>
+  
+  <greater-than>
+   <property>sim/multiplay/generic/int[15]</property>
+   <value>0.1</value>
+  </greater-than>
+  
+ </condition>
+</animation>
+
+<animation>
+ <type>material</type>
+ <object-name>braking_lights</object-name>
+ <object-name>braking_lights.001</object-name>
+ <emission>
+  <red>1.0</red>
+  <green>0.0</green>
+  <blue>0.0</blue>
+  <factor-prop>sim/multiplay/generic/int[16]</factor-prop>
+ </emission>
+ <condition>
+   
+  <greater-than>
+   <property>sim/multiplay/generic/int[16]</property>
+   <value>0.1</value>
+  </greater-than>
+  
+ </condition>
+</animation>
+
+<!--  Switches  -->
+
+<model> 
+ <path>Aircraft/followme/Models/Instruments/switch-indicators.xml</path>
+ <offsets> 
+  <x-m>1.306</x-m>
+  <y-m>-0.035</y-m>
+  <z-m>0.935</z-m>
+  <pitch-deg>-18.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Instruments/Switch-Lights/pb3.xml</path>
+ <offsets> 
+  <x-m>1.306</x-m>
+  <y-m>-0.035</y-m>
+  <z-m>0.935</z-m>
+  <pitch-deg>-18.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Instruments/switch-warninglights.xml</path>
+ <offsets> 
+  <x-m>1.306</x-m>
+  <y-m>-0.0525</y-m>
+  <z-m>0.935</z-m>
+  <pitch-deg>-18.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Instruments/Switch-Lights/pb2.xml</path>
+ <offsets> 
+  <x-m>1.306</x-m>
+  <y-m>-0.0525</y-m>
+  <z-m>0.935</z-m>
+  <pitch-deg>-18.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Instruments/switch-position-lights.xml</path>
+ <offsets> 
+  <x-m>1.306</x-m>
+  <y-m>-0.52</y-m>    <!-- ORIGINAL center = <y-m>-0.07</y-m> -->
+  <z-m>0.935</z-m>
+  <pitch-deg>-18.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Instruments/Switch-Lights/pb.xml</path>
+ <offsets> 
+  <x-m>1.306</x-m>
+  <y-m>-0.52</y-m>
+  <z-m>0.935</z-m>
+  <pitch-deg>-18.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Instruments/switch-lights.xml</path>
+ <offsets> 
+  <x-m>1.405</x-m>
+  <y-m>-0.516</y-m>
+  <z-m>0.919</z-m>
+  <heading-deg>-80.0</heading-deg>
+  <pitch-deg>-8.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Instruments/Switch-Lights/pb0.xml</path>
+ <offsets> 
+  <x-m>1.415</x-m>
+  <y-m>-0.49</y-m>
+  <z-m>0.90</z-m>
+  <pitch-deg>-18.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Instruments/switch-horn.xml</path>
+ <offsets> 
+  <x-m>1.405</x-m>
+  <y-m>-0.143</y-m>
+  <z-m>0.919</z-m>
+  <heading-deg>80.0</heading-deg>
+  <pitch-deg>-5.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Instruments/Switch-Lights/pb4.xml</path>
+ <offsets> 
+  <x-m>1.416</x-m>
+  <y-m>-0.17</y-m>
+  <z-m>0.905</z-m>
+  <pitch-deg>-18.0</pitch-deg>
+ </offsets>
+</model>
+
+<!--  Control Unit  -->
+
+  <model> 
+    <path>Aircraft/followme/Models/Instruments/Switch-Lights/control-unit.xml</path>
+    <offsets> 
+  <x-m>1.287</x-m>
+  <y-m>-0.303</y-m>
+  <z-m>1.010</z-m>
+  <pitch-deg>-15.0</pitch-deg>
+    </offsets>
+  </model>
+
+
+<!--  Rear lights  -->
+
+  <model>     <!-- Left  -->
+    <path>Aircraft/followme/Models/Instruments/Lights/red_lights.xml</path>
+    <offsets> 
+  <x-m>0.055</x-m>
+  <y-m>-2.330</y-m>
+  <z-m>0.700</z-m>
+  <roll-deg>-90.0</roll-deg>
+    </offsets>
+  </model>
+
+  <model>      <!-- Right  -->
+    <path>Aircraft/followme/Models/Instruments/Lights/red_lights.xml</path>
+    <offsets> 
+  <x-m>0.055</x-m>
+  <y-m>-0.990</y-m>
+  <z-m>0.700</z-m>
+  <roll-deg>-90.0</roll-deg>
+    </offsets>
+  </model>
+
+  <model>    <!-- Left  -->
+    <path>Aircraft/followme/Models/Instruments/Lights/orange_lights.xml</path>
+    <offsets> 
+  <x-m>0.053</x-m>
+  <y-m>-2.290</y-m>
+  <z-m>1.200</z-m>
+  <roll-deg>-92.0</roll-deg>
+    </offsets>
+  </model>
+
+  <model>     <!-- Right  -->
+    <path>Aircraft/followme/Models/Instruments/Lights/orange_lights.xml</path>
+    <offsets> 
+  <x-m>0.053</x-m>
+  <y-m>2.29</y-m>
+  <z-m>1.365</z-m>
+  <roll-deg>92.0</roll-deg>
+    </offsets>
+  </model>
+
+
+<!--message setting HerbyW 2016-->
+<model> 
+ <path>Aircraft/followme/Models/Messages/w-blanco.xml</path>
+ <offsets> 
+  <x-m>1.28</x-m>
+  <y-m>-0.08</y-m>
+  <z-m>1.0</z-m>
+  <pitch-deg>-20.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Messages/w-follow_me.xml</path>
+ <offsets> 
+  <x-m>1.28</x-m>
+  <y-m>-0.035</y-m>
+  <z-m>1.0</z-m>
+  <pitch-deg>-20.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Messages/w-left.xml</path>
+ <offsets> 
+  <x-m>1.28</x-m>
+  <y-m>0.01</y-m>
+  <z-m>1.0</z-m>
+  <pitch-deg>-20.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Messages/w-right.xml</path>
+ <offsets> 
+  <x-m>1.28</x-m>
+  <y-m>0.055</y-m>
+  <z-m>1.0</z-m>
+  <pitch-deg>-20.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Messages/w-slow_down.xml</path>
+ <offsets> 
+  <x-m>1.28</x-m>
+  <y-m>0.10</y-m>
+  <z-m>1.0</z-m>
+  <pitch-deg>-20.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Messages/w-stop.xml</path>
+ <offsets> 
+  <x-m>1.28</x-m>
+  <y-m>0.145</y-m>
+  <z-m>1.0</z-m>
+  <pitch-deg>-20.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Messages/w-wait.xml</path>
+ <offsets> 
+  <x-m>1.28</x-m>
+  <y-m>0.19</y-m>
+  <z-m>1.0</z-m>
+  <pitch-deg>-20.0</pitch-deg>
+ </offsets>
+</model>
+
+<!--  Engine Starter and Gear Controls  -->
+
+<model> 
+ <path>Aircraft/followme/Models/Instruments/starter.xml</path>
+ <offsets> 
+  <x-m>1.299</x-m>
+  <y-m>-0.19</y-m>
+  <z-m>0.90</z-m>
+  <pitch-deg>18.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Messages/P.xml</path>
+ <offsets> 
+  <x-m>1.31</x-m>
+  <y-m>0.0</y-m>
+  <z-m>0.95</z-m>
+  <pitch-deg>-2.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Messages/R.xml</path>
+ <offsets> 
+  <x-m>1.31</x-m>
+  <y-m>0.0</y-m>
+  <z-m>0.925</z-m>
+  <pitch-deg>-2.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Messages/N.xml</path>
+ <offsets> 
+  <x-m>1.31</x-m>
+  <y-m>0.0</y-m>
+  <z-m>0.90</z-m>
+  <pitch-deg>-2.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Messages/D.xml</path>
+ <offsets> 
+  <x-m>1.31</x-m>
+  <y-m>0.0</y-m>
+  <z-m>0.875</z-m>
+  <pitch-deg>-2.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Messages/D2.xml</path>
+ <offsets> 
+  <x-m>1.31</x-m>
+  <y-m>0.0</y-m>
+  <z-m>0.85</z-m>
+  <pitch-deg>-2.0</pitch-deg>
+ </offsets>
+</model>
+
+
+
+<!--smoke and tire effects -->
+<model> 
+ <path>Aircraft/followme/Models/Effects/smoke.xml</path>
+ <offsets> 
+  <x-m> 3.7</x-m>
+  <y-m>-0.6</y-m>
+  <z-m> 0.1</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Effects/smoke.xml</path>
+ <offsets> 
+  <x-m> 3.7</x-m>
+  <y-m> 0.6</y-m>
+  <z-m> 0.1</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Effects/smoke-grass.xml</path>
+ <offsets> 
+  <x-m> 3.7</x-m>
+  <y-m>-0.6</y-m>
+  <z-m> 0.1</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Effects/smoke-grass.xml</path>
+ <offsets> 
+  <x-m> 3.7</x-m>
+  <y-m> 0.6</y-m>
+  <z-m> 0.1</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Effects/smoke-sand.xml</path>
+ <offsets> 
+  <x-m> 3.7</x-m>
+  <y-m>-0.6</y-m>
+  <z-m> 0.1</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Effects/smoke-sand.xml</path>
+ <offsets> 
+  <x-m> 3.7</x-m>
+  <y-m> 0.6</y-m>
+  <z-m> 0.1</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Effects/smoke-snow.xml</path>
+ <offsets> 
+  <x-m> 3.7</x-m>
+  <y-m>-0.6</y-m>
+  <z-m> 0.1</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Effects/smoke-snow.xml</path>
+ <offsets> 
+  <x-m> 3.7</x-m>
+  <y-m> 0.6</y-m>
+  <z-m> 0.1</z-m>
+  <pitch-deg>0.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Effects/tyres.xml</path>
+ <offsets> 
+  <x-m> 3.7</x-m>
+  <y-m>-0.6</y-m>
+  <z-m> 0.05</z-m>
+ </offsets>
+</model>
+<model> 
+ <path>Aircraft/followme/Models/Effects/tyres.xml</path>
+ <offsets> 
+  <x-m> 3.7</x-m>
+  <y-m> 0.6</y-m>
+  <z-m> 0.05</z-m>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Effects/engine.xml</path>
+ <offsets> 
+  <x-m> 3.9</x-m>
+  <y-m> -0.3</y-m>
+  <z-m> 0.38</z-m>
+  <pitch-deg>50.0</pitch-deg>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Effects/running.xml</path>
+ <offsets> 
+  <x-m> 3.9</x-m>
+  <y-m> -0.3</y-m>
+  <z-m> 0.38</z-m>
+  <pitch-deg>90.0</pitch-deg>
+ </offsets>
+</model>
+
+
+
+
+</PropertyList>
+ 

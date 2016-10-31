@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Followme Red</name>
+            <texture>Liveries/followmeoutside-r.png</texture>
+        </livery>
+    </model>    
+</sim>
+</PropertyList>

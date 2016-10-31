@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  
+  <path>orange_lights.ac</path>
+  
+  <animation>
+    <type>material</type>
+    <object-name>orange_lights</object-name>
+    <emission>
+      <red>1</red>
+      <green>0.8</green>
+      <blue>0.2</blue>
+      <factor-prop>sim/multiplay/generic/int[13]</factor-prop>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>orange_lights</object-name>
+    <condition>
+      <equals>
+	<property>sim/multiplay/generic/int[13]</property>
+	<value>1</value>
+      </equals>
+    </condition> 
+  </animation>  
+ 
+</PropertyList>

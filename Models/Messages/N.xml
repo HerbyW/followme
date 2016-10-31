@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!--
+    #############################################################################
+    #    (C) 2006 by Yurik V. Nikiforoff - port for FGFS,  FDM,   	#
+    #	2d & 3d instruments, animations, systems and over.		   	#
+    #    	yurik@megasignal.com					   	#
+    #############################################################################	  
+    -->
+<!--
+    #########################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for followme car (Flightgear)
+    ##########################################################################################
+-->
+<PropertyList>
+ <path>N.ac</path>
+ 
+  <!-- Internal instruments lighting -->
+
+  <effect>
+ <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>cover</object-name>
+</effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>cover</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>material</type>     
+    <object-name>text</object-name>
+    <condition>
+     <or>
+     <not-equals>
+      <property>sim/multiplay/generic/float[1]</property>
+      <value>0</value>
+      </not-equals>
+      <not-equals>
+      <property>controls/gear/brake-parking</property>
+      <value>0</value>
+      </not-equals>
+      </or>
+  </condition>  
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+  <type>material</type>
+  <object-name>text</object-name>
+   <condition>
+     <and>
+     <equals>
+      <property>sim/multiplay/generic/float[1]</property>
+      <value>0</value>
+      </equals>
+      <equals>
+      <property>controls/gear/brake-parking</property>
+      <value>0</value>
+      </equals>
+      </and>
+  </condition> 
+  <emission>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>    
+  </emission>
+</animation>
+  
+<animation>
+  <type>pick</type>
+  <object-name>text</object-name>
+  <visible>true</visible>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <binding>
+      <command>property-assign</command>
+      <property>sim/multiplay/generic/float[1]</property>
+      <value>0</value>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>controls/gear/brake-parking</property>
+      <value>0</value>
+    </binding>
+  </action>
+</animation>
+
+</PropertyList>

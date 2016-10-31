@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!--
+    ################################################################################################
+    copyright by Herbert Wagner 01/2016 for cat793D heavy off highway truck (Flightgear)
+    ################################################################################################
+-->
+
+<PropertyList>
+
+  <path>control-unit.ac</path>
+
+  <!--indicators, warn blink 1,2 -->
+
+  <animation>
+    <type>material</type>
+    <object-name>S1out</object-name>
+    <object-name>S2out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S1out</object-name>
+    <object-name>S2out</object-name>
+    <condition>
+    <not-equals>
+     <property>sim/model/lights/indicators/state</property>
+     <value>1</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S1on</object-name>
+    <object-name>S2on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S1on</object-name>
+    <object-name>S2on</object-name>
+    <condition>
+    <equals>
+     <property>sim/model/lights/indicators/state</property>
+     <value>1</value>
+    </equals>
+   </condition> 
+  </animation>
+  
+  <!--warn lamps 3 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S3out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S3out</object-name>
+    <condition>
+    <not-equals>
+     <property>sim/model/lights/indicators/state</property>
+     <value>1</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S3on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S3on</object-name>
+    <condition>
+    <equals>
+     <property>sim/model/lights/indicators/state</property>
+     <value>1</value>
+    </equals>
+   </condition> 
+  </animation>
+  
+  <!--front lights narrow 4 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S4out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S4out</object-name>
+    <condition>
+    <not-equals>
+     <property>controls/lighting/headlight</property>
+     <value>1</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S4on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S4on</object-name>
+    <condition>
+    <equals>
+     <property>controls/lighting/headlight</property>
+     <value>1</value>
+    </equals>
+   </condition> 
+ </animation>
+ 
+ <!--orange warn rear 5 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S5out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S5out</object-name>
+    <condition>
+    <not-equals>
+     <property>sim/model/lights/beacon/state</property>
+     <value>1</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S5on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S5on</object-name>
+    <condition>
+    <equals>
+     <property>sim/model/lights/beacon/state</property>
+     <value>1</value>
+    </equals>
+   </condition> 
+  </animation>
+  
+  <!--front lights far 6 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S6out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S6out</object-name>
+    <condition>
+    <not-equals>
+     <property>controls/lighting/headlight2</property>
+     <value>1</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S6on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S6on</object-name>
+    <condition>
+    <equals>
+     <property>controls/lighting/headlight2</property>
+     <value>1</value>
+    </equals>
+   </condition> 
+  </animation>
+  
+  <!--reverse beep 7 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S7out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S7out</object-name>
+    <condition>
+    <not-equals>
+     <property>controls/engines/engine/direction</property>
+     <value>-1</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S7on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S7on</object-name>
+    <condition>
+    <equals>
+     <property>controls/engines/engine/direction</property>
+     <value>-1</value>
+    </equals>
+   </condition> 
+  </animation>
+
+  <!--park-brakes-light 8 -->
+  
+  <animation>
+    <type>material</type>
+    <object-name>S8out</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.05 </red>
+      <green> 0.05 </green>
+      <blue>  0.05 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S8out</object-name>
+    <condition>
+    <not-equals>
+     <property>controls/gear/brake-parking</property>
+     <value>-1</value>
+    </not-equals>
+   </condition> 
+  </animation>
+  
+  <animation>
+    <type>material</type>
+    <object-name>S8on</object-name>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>S8on</object-name>
+    <condition>
+    <equals>
+     <property>controls/gear/brake-parking</property>
+     <value>1</value>
+    </equals>
+   </condition> 
+ </animation>
+</PropertyList>

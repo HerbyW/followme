@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  
+  <!--Update to version 2.1 by Herbert Wagner 05/2016: 
+           -placecards for selecting messages in the panel
+           -steeringwheel animation fixed
+           -all gears in MP-mode fixed
+           -Sign bigger for better visibility from aircraft
+           -JSBsim fake engine added with more speed and more realism
+           -Splash and thumbnail added
+           -door animations in MP-mode fixed
+           -FDM now not depending on senecall
+           -switches for lights, horn, and many more added (partly made by Sig-Nal)
+           -engine, drifting, doors and starting sound added
+           -MP hanger function fixed (open doors in MP-mode)
+           -Killer grass elimination
+           -additional Drifting effects for snow, grass, sand and normal runway surface
+           -some more Panel addings from Sig-Nal
+           -red, white and orange liveries added
+           -braking sound and effect added
+  -->
+  
+  <controls>
+	<flight>
+		<aileron alias="/controls/flight/rudder" />
+	</flight>
+
+	<lighting>
+		<headlight type="int">0</headlight>
+		<headlight2 type="int">0</headlight2>
+		<indicators type="int">0</indicators>
+		<beacon type="int">0</beacon>
+	</lighting>
+
+	  <switches>      
+	    <gauge-light type="int">1</gauge-light>      
+	  </switches>
+	  <gear><brake-parking type="int">1</brake-parking></gear>
+</controls>
+
+<scenery><share-events type="bool">true</share-events></scenery>
+  
+<sim>
+
+	<description>Follow Me</description>
+	<author>Herbert Wagner, Gijs de Rooy</author>
+	<status>early production</status>
+	<rating>
+		<FDM type="int">5</FDM>
+		<systems type="int">5</systems>
+		<cockpit type="int">4</cockpit>
+		<model type="int">4</model>
+	</rating>
+	<aircraft-version type="string">2.1</aircraft-version>.
+	<flight-model>jsb</flight-model>
+	<aero>followme</aero>
+
+	<model>
+	  <path>Aircraft/followme/Models/followme.xml</path>
+	  <livery archive="y">
+	    <file type="string">followme</file>
+	  </livery>
+	  <message archive="y">
+	    <file type="string">follow_me</file>
+	    <name type="string">Follow Me</name>
+	    <texture-message type="string">Sign/follow_me.png</texture-message>
+	  </message>
+	</model> 
+        
+        <fuel-fraction>0.12</fuel-fraction>
+        
+        <startup>
+	  <splash-texture>Aircraft/followme/splash-follow.png</splash-texture>
+	</startup>
+	
+	
+        
+        
+	<view n="0">
+		<internal archive="y">true</internal>
+		<config>
+			<x-offset-m archive="y" type="double">-0.3</x-offset-m>
+			<y-offset-m archive="y" type="double">1.3</y-offset-m>
+			<z-offset-m archive="y" type="double">1.9</z-offset-m>
+			<pitch-offset-deg>-10.0</pitch-offset-deg>
+			<field-of-view>120.0</field-of-view>
+		</config>
+	</view>
+
+	<view n="1">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="2">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="3">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="4">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="5">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="6">
+		<config>
+			<target-y-offset-m archive="y" type="double">1.6</target-y-offset-m>
+		</config>
+	</view>
+	
+	<view n="7">
+		<internal archive="y">true</internal>
+		<config>
+			<x-offset-m archive="y" type="double">-0.0</x-offset-m>
+			<y-offset-m archive="y" type="double">6.7</y-offset-m>
+			<z-offset-m archive="y" type="double">-12.7</z-offset-m>
+			<pitch-offset-deg>-10.0</pitch-offset-deg>
+			<field-of-view>89</field-of-view>
+		</config>
+	</view>
+
+	<systems>
+      <autopilot>
+	<name>Autopilot</name>
+	<path>Aircraft/followme/Nasal/followme-autopilot.xml</path>
+      </autopilot>
+    </systems>
+	
+	<hud>
+		<enable3d>false</enable3d>
+	</hud>
+
+	<help>
+	  <key>
+	    <name>m</name>
+	    <desc>Toggle direction</desc>
+	  </key>
+	  <key>
+	    <name>f</name>
+	    <desc>Lights</desc>
+	  </key>
+	  <key>
+	    <name>s</name>
+	    <desc>Autostart</desc>
+	  </key>
+	  <key>
+	    <name>q</name>
+	    <desc>Horn</desc>
+	  </key>
+	  <key>
+	    <name>r</name>
+	    <desc>Reset</desc>
+	  </key>
+	  <key>
+	    <name>d</name>
+	    <desc>Flash Beam</desc>
+	  </key>
+		<text>
+		  
+	Welcome to the Followme-car version 2.1 for Flightgear with lots of new functions!
+
+	
+	All functions are settable in the cockpit.
+	3 switches: lights / message-warning-lights / indicators
+	Push button: Engine starter, push 1 second with blue P (Parking) activ
+	Yellow placecrds: select message on the bar
+	Blue placecards: as normal as in every automatic car 
+		     P   Parking
+		     R   Reverse
+		     N   Normal-Standing
+		     D   Driving all gears
+		     2   Driving only first 2 gears (half engine power)
+	
+	Start up:  push blue P (parking brakes are set automaticaly)
+		   push starter button for 1 second
+		   push N for loosing the brakes
+		   select; D,R or 2
+		   
+	Shut down: push blue P
+		   push Starter button
+		   
+	- maximal speed is 160 (a little to much but more fun)
+	- drifting action with contra steering and 4 different animations depending on surfaces (rw, sand, snow, grass)
+	- original R4 sounds for emergency braking, drifting, all doors open and close, engines sound for normal and speed, starter, horn
+	- full smoke effects for drifting, emergency braking, engine start up
+	- full Rembrandt and multiplayer support for all functions, (works perfect without Rembrandt also)
+	- no killer grass problems, driving on all surfaces possible
+	
+	Development by Herbert Wagner 05/2016, based on the default followme from Flightgear (Gijs de Rooy), fully compatible with old model
+		</text>
+	</help>
+	
+	<menubar>
+	  <default>
+	    <menu n="10">
+	      <label>Follow me</label>
+	      <enabled type="bool">true</enabled>
+	      <item>
+		<label>Select livery</label>
+		<binding>
+		  <command>nasal</command>
+		  <script>aircraft.livery.dialog.open()</script>
+		</binding>
+	      </item>
+	    </menu>    
+	  </default>
+	</menubar>
+	
+	<sound>
+	  <path>Aircraft/followme/Sounds/followme-sound.xml</path>
+	</sound> 
+
+<multiplay>
+  <chat_display>1</chat_display>
+<generic>
+
+    <float n="1" alias="/controls/engines/engine/direction"/>
+    <float n="2" alias="/sim/model/door-positions/frontleft/position-norm"/>
+    <float n="3" alias="/sim/model/door-positions/frontright/position-norm"/>
+    <float n="4" alias="/sim/model/door-positions/rearleft/position-norm"/>
+    <float n="5" alias="/sim/model/door-positions/rearright/position-norm"/>
+    <float n="6" alias="/controls/engines/engine[0]/throttle"/>    
+    <float n="9" alias="/fdm/jsbsim/forces/fby-total-lbs"/> 
+    <float n="10" alias="/velocities/groundspeed-kt"/>
+    <float n="11" alias="/fdm/jsbsim/gear/unit/wheel-speed-fps"/> 
+    
+    <int type="int" n="0" alias="/gear/gear[0]/wow">  0 </int>
+    <int type="int" n="1" alias="/gear/gear[1]/wow">  0 </int>
+    <int type="int" n="2" alias="/gear/gear[2]/wow">  0 </int>
+    <int type="int" n="3" alias="/gear/gear[3]/wow">  0 </int>
+    <int type="int" n="4" alias="/controls/lighting/headlight">  0 </int>
+    <int type="int" n="5" alias="/controls/switches/gauge-light"/> 
+    <int type="int" n="6" alias="/controls/engines/engine/ignition">  0 </int>
+    <int type="int" n="7" alias="/controls/engines/engine/starter">  0 </int>
+    <int type="int" n="8" alias="/controls/lighting/beacon">  0 </int> 
+    <int type="int" n="9" alias="/controls/lighting/indicators">  0 </int>
+    <int type="int" n="12" alias="/engines/engine[0]/running">  0 </int>
+    <int type="int" n="13" alias="/sim/model/lights/indicators/state">  0 </int> 
+    <int type="int" n="14" alias="/sim/model/lights/beacon/state">  0 </int>
+    <int type="int" n="15" alias="/controls/gear/brake-left">  0 </int>
+    <int type="int" n="16" alias="/controls/gear/brake-right">  0 </int>
+    <int type="int" n="17" alias="/controls/gear/brake-parking">  0 </int>
+    <int type="int" n="18" alias="/controls/horn">  0 </int>
+    <int type="int" n="19" alias="/controls/lighting/headlight2">  0 </int>
+    
+    <string n="0" alias="/sim/multiplay/callsign"/>
+    <string n="1" alias="/fdm/jsbsim/environment/terrain-names"/>
+    <string n="2" alias="/sim/model/message/file">follow_me</string>
+    <string n="3" alias="/sim/model/message/texture-message">Sign/follow_me.png</string>
+    <string n="4" alias="/sim/model/message/name">Follow Me</string>
+  </generic>
+</multiplay>
+  </sim>
+  
+<engines>
+	<engine n="0">
+		<rpm type="double">200</rpm>
+	</engine>
+	<engine n="1">
+		<rpm type="double">200</rpm>
+	</engine>
+</engines>
+
+
+
+
+<input>
+  <keyboard>
+    <key n="109"> 
+      <name>m</name>
+      <desc>Toggle direction</desc>
+      <binding> 
+	<command>property-cycle</command>
+	<property>controls/engines/engine/direction</property>
+	<value type="double">-1</value>
+	<value type="double">1</value>
+      </binding>
+    </key>
+    <key n="115">
+      <name>s</name>
+      <desc>Autostart</desc>
+      <binding>
+	<command>nasal</command>
+	<script>followme.autostart();</script>
+      </binding>
+    </key>
+    <key n="113">
+      <name>q</name>
+      <desc>Horn</desc>
+      <binding>
+	<command>property-assign</command>
+	<property>controls/horn</property>
+	<value type="int">1</value>
+      </binding>
+      <mod-up>
+	<binding>
+	  <command>property-assign</command>
+	  <property>controls/horn</property>
+	  <value type="int">0</value>
+	</binding>
+      </mod-up>
+    </key>
+    <key n="114">
+    <name>r</name>
+      <desc>Reset</desc>
+      <binding>
+	<command>property-assign</command>
+	<property>fdm/jsbsim/simulation/reset</property>
+	<value type="int">1</value>
+      </binding>
+    </key>
+      <key n="100">
+        <name>d</name>
+        <desc>Beam-call</desc>
+        <binding>
+          <command>nasal</command>
+          <script>followme.beam_call()</script>
+        </binding>
+        <mod-up>
+          <binding>
+            <command>nasal</command>
+            <script>followme.beam_stop()</script>
+          </binding>
+        </mod-up>
+      </key>
+      <key n="102">
+        <name>f</name>
+        <desc>Lights</desc>
+        <binding>
+           <command>property-toggle</command>
+           <property>controls/lighting/headlight2</property>
+           <value type="int">1</value> 
+           <value type="int">0</value>
+        </binding>
+      </key>
+  </keyboard>
+</input>
+
+<nasal>
+	<followme>
+		<file>Aircraft/followme/Nasal/systems.nas</file>
+		<file>Aircraft/followme/Nasal/autostart.nas</file>
+		<file>Aircraft/followme/Nasal/liveries.nas</file>
+	</followme>
+	<doors>
+	    <file>Aircraft/followme/Nasal/doors.nas</file>
+	</doors>
+</nasal>
+
+</PropertyList>
+
+
+
+

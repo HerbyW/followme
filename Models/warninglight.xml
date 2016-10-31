@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+    #########################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for followme car (Flightgear)
+    ##########################################################################################
+-->
+
+<PropertyList>
+    <path>warninglight.ac</path>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>warninglight</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>warninglight</object-name>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+  </effect>
+
+  <animation>
+    <type>alpha-test</type>
+    <alpha-factor>0.01</alpha-factor>
+  </animation>
+
+  <animation>
+    <type>billboard</type>
+    <object-name>warninglight</object-name>
+    <spherical type="bool">true</spherical>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>warninglight</object-name>
+    <condition>
+      <property>sim/multiplay/generic/int[14]</property>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>warninglight</object-name>
+    <emission>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+      <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
+    </emission>
+  </animation>
+
+	<animation>
+		<type>dist-scale</type>
+		<object-name>warninglight</object-name>
+		<interpolation>
+			<entry>
+				<ind>0</ind>
+				<dep>0.0175</dep>
+			</entry>
+			<entry>
+				<ind>300</ind>
+				<dep>0.1</dep>
+			</entry>
+			<entry>
+				<ind>1500</ind>
+				<dep>0.2</dep>
+			</entry>
+			<entry>
+				<ind>6000</ind>
+				<dep>.3</dep>
+			</entry>
+		</interpolation>
+  </animation>
+
+</PropertyList>
+

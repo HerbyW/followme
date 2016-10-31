@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<PropertyList>
+<sim>
+	<model>
+		<message>
+			<name type="string">Slow Down</name>
+			<texture-message>Sign/slow_down.png</texture-message>
+		</message>
+	</model>
+</sim>
+</PropertyList>

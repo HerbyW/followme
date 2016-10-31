@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<PropertyList>
+<sim>
+	<model>
+		<message>
+			<name type="string">Wait</name>
+			<texture-message>Sign/wait.png</texture-message>
+		</message>
+	</model>
+</sim>
+</PropertyList>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    #########################################################################################
+    modified or copyright by Herbert Wagner 01/2016 for followme car (Flightgear)
+    ##########################################################################################
+-->
+
+<PropertyList>
+
+  <path>switch-H.ac</path>
+
+<animation>
+  <type>material</type>
+  <object-name>fond</object-name>
+  <object-name>button</object-name>
+  <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.21 </red>
+      <green> 0.21 </green>
+      <blue>  0.21 </blue>
+    </emission>
+</animation>
+
+  
+<animation>
+  <type>translate</type>
+  <object-name>button</object-name>
+  <property>sim/multiplay/generic/int[4]</property>  
+  <factor>0.001</factor>
+  <axis>
+    <x>-1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
+
+<!--Control-->
+<animation>
+  <type>pick</type>
+  <object-name>button</object-name>
+  <visible>true</visible>
+  <action>
+        <button>0</button>
+        <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/multiplay/generic/int[4]</property>
+      </binding>
+    </action>
+</animation>
+
+
+</PropertyList>
