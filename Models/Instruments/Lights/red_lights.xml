@@ -2,11 +2,12 @@
 
 <PropertyList>
   
-  <path>red_lights.ac</path>
+  <path>red_lights2.ac</path>
   
   <animation>
     <type>select</type>    
-    <object-name>red_lights</object-name>
+    <object-name>red_lightL</object-name>
+    <object-name>red_lightR</object-name>
     <condition>
       <equals>
 	<property>sim/multiplay/generic/int[19]</property>
@@ -17,15 +18,17 @@
   
   <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
-    <object-name>red_lights</object-name>
+    <object-name>red_lightL</object-name>
+    <object-name>red_lightR</object-name>
     <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
+      <property>/sim/rendering/rembrandt/enabled</property>
     </condition>
   </effect>      
   
   <animation>
     <type>material</type>    
-    <object-name>red_lights</object-name>
+    <object-name>red_lightL</object-name>
+    <object-name>red_lightR</object-name>
     <emission>
       <red>1</red>
       <green>0</green>

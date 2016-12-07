@@ -308,7 +308,7 @@
     <condition>
     <not-equals>
      <property>controls/gear/brake-parking</property>
-     <value>-1</value>
+     <value>1</value>
     </not-equals>
    </condition> 
   </animation>

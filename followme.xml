@@ -5,7 +5,7 @@
     <fileheader>
         <author>Herbert Wagner, Torsten Dreyer, Gijs de Rooy</author>
         <filecreationdate>2016-05-04</filecreationdate>
-        <version>2.0</version>
+        <version>2.2</version>
         <description>followme car</description>
     </fileheader>
 
@@ -211,9 +211,8 @@
 	  </orient>
 	</thruster>
       </engine>
-      <!--
-      Tank
-      -->
+      
+      <!--Tank-->
       <tank type="FUEL" number="0">
 	<location unit="M">
 	  <x>  2.5 </x>
@@ -225,7 +224,7 @@
 	<contents unit="KG"> 10.35 </contents>
       </tank>
       
-      </propulsion>
+    </propulsion>
 
     <flight_control name="Truck">
       

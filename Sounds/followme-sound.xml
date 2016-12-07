@@ -143,7 +143,7 @@
 	    <property>sim/multiplay/generic/float[10]</property>
 	    <value>7</value>
 	  </greater-than>
-	  <property>sim/multiplay/generic/int[17]</property>
+	  <property>sim/multiplay/generic/float[17]</property>
 	</and>
       </condition>
       <reference-dist>100</reference-dist>

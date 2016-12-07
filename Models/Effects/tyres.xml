@@ -26,7 +26,7 @@
 	    <value>-7</value>	    
 	  </less-than>
 	  </or>
-	  <property>sim/multiplay/generic/int[17]</property>
+	  <property>sim/multiplay/generic/float[17]</property>
 	</and>
       </condition>
       

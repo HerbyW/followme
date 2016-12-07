@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  
+  <path>renault-lamps.ac</path>
+  
+    <!-- Lamps-->
+
+  <animation>
+    <type>material</type>
+    <object-name>head_lights.001</object-name>
+    <emission>
+      <factor-prop>sim/multiplay/generic/int[4]</factor-prop>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+ 
+  <animation>
+    <type>material</type>
+    <object-name>Mesh80</object-name>   
+    <emission>
+      <factor-prop>sim/multiplay/generic/int[19]</factor-prop>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+ 
+ 
+</PropertyList>

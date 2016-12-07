@@ -4,11 +4,8 @@
     modified or copyright by Herbert Wagner 01/2016 for followme car (Flightgear)
     ##########################################################################################
 -->
-<path>followme.ac</path>
+<path>followme2.ac</path>
 
-<sound>
-  <path>Aircraft/followme/Sounds/followme-sound.xml</path>
-</sound> 
 
 <nasal>
   <load>
@@ -22,8 +19,9 @@
   </unload>   
 </nasal>
 
-
-  
+<sound>
+  <path>Aircraft/followme/Sounds/followme-sound.xml</path>
+</sound> 
   
 <animation>
  <type>material</type>
@@ -37,8 +35,6 @@
     <blue>  1 </blue>
   </emission>
 </animation>
-
-
 
 <animation>
   <type>material</type>
@@ -57,26 +53,6 @@
     <blue>  0.1 </blue>
   </emission>
 </animation>
-
-
-
-<model> 
- <path>Aircraft/followme/Models/warninglight.xml</path>
- <offsets> 
-  <x-m> 3.42</x-m>
-  <y-m>-0.5</y-m>
-  <z-m> 1.75</z-m>
- </offsets>
-</model>
-
-<model> 
- <path>Aircraft/followme/Models/warninglight.xml</path>
- <offsets> 
-  <x-m> 3.42</x-m>
-  <y-m> 0.5</y-m>
-  <z-m> 1.75</z-m>
- </offsets>
-</model>
 
 <!-- INSTRUMENTS -->
 
@@ -342,7 +318,7 @@
 <effect>
   <inherits-from>Effects/model-transparent</inherits-from>
   <condition>
-    <property>sim/rendering/rembrandt/enabled</property>
+    <property>/sim/rendering/rembrandt/enabled</property>
   </condition>
   <object-name>ldoor_0.003</object-name>
   <object-name>Mesh11_0.001</object-name>
@@ -505,7 +481,7 @@
  </axis>
 </animation>
 
-<!-- LIGHTS -->
+<!-- LIGHTS Fernlicht-->
 
 <effect>
  <inherits-from>Effects/light-cone</inherits-from>
@@ -530,82 +506,13 @@
          </condition>
 </animation>
 
-  <!-- Rembrand light -->
+  <!-- Rembrand lights and Lamps-->
 
   <model>
-    <path>Aircraft/followme/Models/Instruments/Lights/Al3-Rembrandt_Lights.xml</path>
-    <name>head-light</name>
-    <condition>
-      <and>
-	<property>/sim/rendering/rembrandt/enabled</property>
-	<property>sim/multiplay/generic/int[4]</property>
-      </and>
-    </condition>
-    <offsets>
-      <x-m> 2.10 </x-m>
-      <y-m> -0.50 </y-m>
-      <z-m> 2.0 </z-m>
-      <pitch-deg>0</pitch-deg>
-      <heading-deg>2.5</heading-deg>
-    </offsets>
+    <path>Aircraft/followme/Models/Instruments/Lights/Rembrandt_Light.xml</path>
   </model>
-  
-  <model>
-    <path>Aircraft/followme/Models/Instruments/Lights/Al3-Rembrandt_Lights.xml</path>
-    <name>head-light</name>
-    <condition>
-      <and>
-	<property>/sim/rendering/rembrandt/enabled</property>
-	<property>sim/multiplay/generic/int[4]</property>
-      </and>
-    </condition>
-    <offsets>
-      <x-m> 2.10 </x-m>
-      <y-m> 1.00 </y-m>
-      <z-m> 2.0 </z-m>
-      <pitch-deg>0</pitch-deg>
-      <heading-deg>2.5</heading-deg>
-    </offsets>
-  </model>
-  
-  <animation>
-    <type>select</type>
-    <object-name>Mesh79L</object-name>
-    <object-name>Mesh80L</object-name>
-    <condition>
-      <not>
-	<property>sim/multiplay/generic/int[19]</property>
-      </not>
-    </condition>
-  </animation>
-  
-  <animation>
-    <type>select</type>
-    <object-name>head_lights</object-name>
-    <object-name>head_lightsB</object-name>
-    <condition>
-      <not><property>sim/multiplay/generic/int[4]</property></not>
-    </condition>
-  </animation>
-  
-  <animation>
-    <type>select</type>
-    <object-name>head_lightsL</object-name>
-    <condition>
-     <property>sim/multiplay/generic/int[4]</property>
-    </condition>
-  </animation>
-  
-  <animation>
-    <type>material</type>
-    <object-name>head_lightsL</object-name>
-    <emission>
-      <factor-prop>sim/multiplay/generic/int[4]</factor-prop>
-      <red>1.0</red>
-      <green>1.0</green>
-      <blue>1.0</blue>  
-    </emission>
-  </animation>
+
+  <!-- Indicator lights-->
   
   <animation>
     <type>material</type>
@@ -618,6 +525,28 @@
       <factor-prop>sim/multiplay/generic/int[13]</factor-prop>
     </emission>
   </animation>
+  
+  <!-- Warning lights-->
+  
+<model> 
+ <path>Aircraft/followme/Models/warninglight.xml</path>
+ <offsets> 
+  <x-m> 3.42</x-m>
+  <y-m>-0.5</y-m>
+  <z-m> 1.75</z-m>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/warninglight.xml</path>
+ <offsets> 
+  <x-m> 3.42</x-m>
+  <y-m> 0.5</y-m>
+  <z-m> 1.75</z-m>
+ </offsets>
+</model>
+
+<!-- Braking lights-->
   
 <effect>
  <inherits-from>Effects/model-transparent</inherits-from>
@@ -633,12 +562,12 @@
   <red>1.0</red>
   <green>0.0</green>
   <blue>0.0</blue>
-  <factor-prop>sim/multiplay/generic/int[15]</factor-prop>
+  <factor-prop>sim/multiplay/generic/float[15]</factor-prop>
  </emission>
  <condition>
   
   <greater-than>
-   <property>sim/multiplay/generic/int[15]</property>
+   <property>sim/multiplay/generic/float[15]</property>
    <value>0.1</value>
   </greater-than>
   
@@ -653,12 +582,12 @@
   <red>1.0</red>
   <green>0.0</green>
   <blue>0.0</blue>
-  <factor-prop>sim/multiplay/generic/int[16]</factor-prop>
+  <factor-prop>sim/multiplay/generic/float[16]</factor-prop>
  </emission>
  <condition>
    
   <greater-than>
-   <property>sim/multiplay/generic/int[16]</property>
+   <property>sim/multiplay/generic/float[16]</property>
    <value>0.1</value>
   </greater-than>
   
@@ -775,47 +704,15 @@
 
 <!--  Rear lights  -->
 
-  <model>     <!-- Left  -->
+  <model>
     <path>Aircraft/followme/Models/Instruments/Lights/red_lights.xml</path>
-    <offsets> 
-  <x-m>0.055</x-m>
-  <y-m>-2.330</y-m>
-  <z-m>0.700</z-m>
-  <roll-deg>-90.0</roll-deg>
-    </offsets>
   </model>
 
-  <model>      <!-- Right  -->
-    <path>Aircraft/followme/Models/Instruments/Lights/red_lights.xml</path>
-    <offsets> 
-  <x-m>0.055</x-m>
-  <y-m>-0.990</y-m>
-  <z-m>0.700</z-m>
-  <roll-deg>-90.0</roll-deg>
-    </offsets>
-  </model>
-
-  <model>    <!-- Left  -->
+  <model>
     <path>Aircraft/followme/Models/Instruments/Lights/orange_lights.xml</path>
-    <offsets> 
-  <x-m>0.053</x-m>
-  <y-m>-2.290</y-m>
-  <z-m>1.200</z-m>
-  <roll-deg>-92.0</roll-deg>
-    </offsets>
   </model>
 
-  <model>     <!-- Right  -->
-    <path>Aircraft/followme/Models/Instruments/Lights/orange_lights.xml</path>
-    <offsets> 
-  <x-m>0.053</x-m>
-  <y-m>2.29</y-m>
-  <z-m>1.365</z-m>
-  <roll-deg>92.0</roll-deg>
-    </offsets>
-  </model>
-
-
+  
 <!--message setting HerbyW 2016-->
 <model> 
  <path>Aircraft/followme/Models/Messages/w-blanco.xml</path>
@@ -1061,8 +958,4 @@
  </offsets>
 </model>
 
-
-
-
 </PropertyList>
- 

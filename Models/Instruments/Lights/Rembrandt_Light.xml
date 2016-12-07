@@ -1,0 +1,242 @@
+<PropertyList>
+
+  <!--Copyright Herbert Wagner for followme 12/2016
+  -->
+  <path>renault-lamps2.ac</path>
+  
+  <nopreview/>
+ 
+     <!-- Lamps-->
+
+  <animation>
+    <type>material</type>
+    <object-name>head_lights.001</object-name>
+    <emission>
+      <factor-prop>sim/multiplay/generic/int[4]</factor-prop>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+ 
+  <animation>
+    <type>material</type>
+    <object-name>Mesh80</object-name>   
+    <emission>
+      <factor-prop>sim/multiplay/generic/int[19]</factor-prop>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+ 
+ 
+  <animation>
+    <type>light</type>
+    <light-type>spot</light-type>
+    <name>AbblendL</name>
+    <object-name>volume-AL</object-name>
+    <position>
+      <x>0.093</x>
+      <y>-0.534</y>
+      <z>0.363</z>
+    </position>
+    <direction>
+      <x> -17.60 </x>
+      <y>  -1.52 </y>
+      <z>-0.556 </z>
+    </direction>
+    <ambient>
+      <r>0.03</r>
+      <g>0.03</g>
+      <b>0.03</b>
+      <a>1.0</a>
+    </ambient>
+    <diffuse>
+      <r>1</r>
+      <g>1</g>
+      <b>1</b>
+      <a>1.0</a>
+    </diffuse>
+    <specular>
+      <r>1</r>
+      <g>1</g>
+      <b>1</b>
+      <a>1.0</a>
+    </specular>
+    <attenuation>
+      <c>1.0</c>
+      <l>0.002</l>
+      <q>0.00005</q>
+    </attenuation>            
+    <exponent>100</exponent> <!--Thus, higher spot exponents result in a more focused light source 0-128-->
+    <cutoff>40</cutoff>
+    <!--the maximum spread angle of a light source 0-90-->
+    <near-m>0.05</near-m>
+    <far-m>20</far-m>
+  </animation>
+  
+  <animation>
+    <type>light</type>
+    <light-type>spot</light-type>
+    <name>AbblendR</name>
+    <object-name>volume-AR</object-name>
+    <position>
+      <x>0.093</x>
+      <y>0.534</y>
+      <z>0.363</z>
+    </position>
+    <direction>
+      <x> -17.60 </x>
+      <y>  1.52 </y>
+      <z>-0.556 </z>
+    </direction>
+    <ambient>
+      <r>0.03</r>
+      <g>0.03</g>
+      <b>0.03</b>
+      <a>1.0</a>
+    </ambient>
+    <diffuse>
+      <r>1</r>
+      <g>1</g>
+      <b>1</b>
+      <a>1.0</a>
+    </diffuse>
+    <specular>
+      <r>1</r>
+      <g>1</g>
+      <b>1</b>
+      <a>1.0</a>
+    </specular>
+    <attenuation>
+      <c>1.0</c>
+      <l>0.002</l>
+      <q>0.00005</q>
+    </attenuation>            
+    <exponent>100</exponent> <!--Thus, higher spot exponents result in a more focused light source 0-128-->
+    <cutoff>40</cutoff>
+    <!--the maximum spread angle of a light source 0-90-->
+    <near-m>0.05</near-m>
+    <far-m>20</far-m>
+  </animation>
+  
+  <animation>
+    <type>light</type>
+    <light-type>spot</light-type>
+    <name>FernL</name>
+    <object-name>volume-FL</object-name>
+    <position>
+      <x>0.163</x>
+      <y>-0.561</y>
+      <z>0.737</z>
+    </position>
+    <direction>
+      <x> -55.70 </x>
+      <y>  -2.55 </y>
+      <z>-0.96 </z>
+    </direction>
+    <ambient>
+      <r>0.03</r>
+      <g>0.03</g>
+      <b>0.03</b>
+      <a>1.0</a>
+    </ambient>
+    <diffuse>
+      <r>1</r>
+      <g>1</g>
+      <b>1</b>
+      <a>1.0</a>
+    </diffuse>
+    <specular>
+      <r>1</r>
+      <g>1</g>
+      <b>1</b>
+      <a>1.0</a>
+    </specular>
+    <attenuation>
+      <c>1.0</c>
+      <l>0.002</l>
+      <q>0.00005</q>
+    </attenuation>            
+    <exponent>120</exponent> <!--Thus, higher spot exponents result in a more focused light source 0-128-->
+    <cutoff>40</cutoff>
+    <!--the maximum spread angle of a light source 0-90-->
+    <near-m>0.05</near-m>
+    <far-m>200</far-m>
+  </animation>
+  
+  <animation>
+    <type>light</type>
+    <light-type>spot</light-type>
+    <name>FernR</name>
+    <object-name>volume-FR</object-name>
+    <position>
+      <x>0.163</x>
+      <y>0.561</y>
+      <z>0.737</z>
+    </position>
+    <direction>
+      <x> -55.70 </x>
+      <y>  2.55 </y>
+      <z>-0.96 </z>
+    </direction>
+    <ambient>
+      <r>0.03</r>
+      <g>0.03</g>
+      <b>0.03</b>
+      <a>1.0</a>
+    </ambient>
+    <diffuse>
+      <r>1</r>
+      <g>1</g>
+      <b>1</b>
+      <a>1.0</a>
+    </diffuse>
+    <specular>
+      <r>1</r>
+      <g>1</g>
+      <b>1</b>
+      <a>1.0</a>
+    </specular>
+    <attenuation>
+      <c>1.0</c>
+      <l>0.002</l>
+      <q>0.00005</q>
+    </attenuation>            
+    <exponent>120</exponent> <!--Thus, higher spot exponents result in a more focused light source 0-128-->
+    <cutoff>40</cutoff>
+    <!--the maximum spread angle of a light source 0-90-->
+    <near-m>0.05</near-m>
+    <far-m>200</far-m>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>AbblendL</object-name>
+    <object-name>AbblendR</object-name>
+    <condition>
+      <and>
+	<property>sim/multiplay/generic/int[19]</property>
+	<property>/sim/rendering/rembrandt/enabled</property>
+	</and>
+      </condition>
+    </animation>
+    
+    <animation>
+    <type>select</type>
+    <object-name>FernL</object-name>
+    <object-name>FernR</object-name>
+    <condition>
+      <and>
+	<property>sim/multiplay/generic/int[4]</property>
+	<property>/sim/rendering/rembrandt/enabled</property>
+	</and>
+      </condition>
+    </animation>
+    
+    
+    
+    
+    </PropertyList>
+    
