@@ -77,16 +77,6 @@
       <property>sim/multiplay/generic/string[2]</property>
       <value>stop</value>
     </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/string[4]</property>
-      <value>Stop</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/string[3]</property>
-      <value>Sign/stop.png</value>
-    </binding>
   </action>
 </animation>
 

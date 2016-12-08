@@ -77,16 +77,6 @@
       <property>sim/multiplay/generic/string[2]</property>
       <value>follow_me</value>
     </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/string[4]</property>
-      <value>Follow Me</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/string[3]</property>
-      <value>Sign/follow_me.png</value>
-    </binding>
   </action>
 </animation>
 

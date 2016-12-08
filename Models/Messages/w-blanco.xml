@@ -77,17 +77,6 @@
       <property>sim/multiplay/generic/string[2]</property>
       <value>blanco</value>
     </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/string[4]</property>
-      <value>Blanco</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/string[3]</property>
-      <value>Sign/blanco.png</value>
-    </binding>
-    
   </action>
 </animation>
 

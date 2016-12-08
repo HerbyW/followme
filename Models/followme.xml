@@ -4,37 +4,25 @@
     modified or copyright by Herbert Wagner 01/2016 for followme car (Flightgear)
     ##########################################################################################
 -->
-<path>followme2.ac</path>
+<path>followme.ac</path>
 
 
 <nasal>
   <load>
     var livery_update = aircraft.livery_update.new("Aircraft/followme/Models/Liveries", 10);
-    var update = aircraft.overlay_update.new();
-    update.add("Aircraft/followme/Models/Sign", "sim/multiplay/generic/string[2]");
   </load>   
   <unload>
     livery_update.stop();
-    update.stop();
   </unload>   
 </nasal>
 
 <sound>
   <path>Aircraft/followme/Sounds/followme-sound.xml</path>
 </sound> 
-  
-<animation>
- <type>material</type>
- <object-name>sign</object-name>
- <property-base>sim/model/message</property-base>
- <texture-prop>texture-message</texture-prop>
- <texture>follow_me.png</texture>
- <emission>
-    <red>   1 </red>
-    <green> 1 </green>
-    <blue>  1 </blue>
-  </emission>
-</animation>
+
+<model> 
+ <path>Aircraft/followme/Models/Sign/sign.xml</path>
+</model>
 
 <animation>
   <type>material</type>
@@ -54,35 +42,6 @@
   </emission>
 </animation>
 
-<!-- INSTRUMENTS -->
-
-<model> 
- <path>Aircraft/followme/Models/Instruments/fuelgauge.xml</path>
- <offsets> 
-  <x-m>1.31</x-m>
-  <y-m>-0.25</y-m>
-  <z-m>1.01</z-m>
- </offsets>
-</model>
-
-<model> 
- <path>Aircraft/followme/Models/Instruments/Switch-Lights/fuel-reserve.xml</path>
- <offsets> 
-  <x-m>1.286</x-m>
-  <y-m>-0.27</y-m>
-  <z-m>1.000</z-m>
- </offsets>
-</model>
-
-<model> 
- <path>Aircraft/followme/Models/Instruments/speedometer.xml</path>
- <offsets> 
-  <x-m>1.31</x-m>
-  <y-m>-0.38</y-m>
-  <z-m>1.03</z-m>
- </offsets>
-</model>
-  
 <!-- STEERINGWHEEL -->
 
 <animation>  
@@ -481,23 +440,69 @@
  </axis>
 </animation>
 
-<!-- LIGHTS Fernlicht-->
+<!-- INSTRUMENTS -->
+
+<model> 
+ <path>Aircraft/followme/Models/Instruments/fuelgauge.xml</path>
+ <offsets> 
+  <x-m>1.31</x-m>
+  <y-m>-0.25</y-m>
+  <z-m>1.01</z-m>
+ </offsets>
+</model>
+
+<!-- tank symbol for low fuel -->
+<model> 
+ <path>Aircraft/followme/Models/Instruments/fuel-reserve.xml</path>
+ <offsets> 
+  <x-m>1.286</x-m>
+  <y-m>-0.27</y-m>
+  <z-m>1.000</z-m>
+ </offsets>
+</model>
+
+<model> 
+ <path>Aircraft/followme/Models/Instruments/speedometer.xml</path>
+ <offsets> 
+  <x-m>1.31</x-m>
+  <y-m>-0.38</y-m>
+  <z-m>1.03</z-m>
+ </offsets>
+</model>
+  
+
+<!-- LIGHTS Fernlicht ohne rembrandt-->
 
 <effect>
  <inherits-from>Effects/light-cone</inherits-from>
  <object-name>Cone</object-name>
+ <object-name>Cone.001</object-name>
 </effect>
 
 <effect>
  <inherits-from>Effects/model-transparent</inherits-from>
   <object-name>Cone</object-name>
  <object-name>Cone-texture</object-name>
+ <object-name>Cone.001</object-name>
+ <object-name>Cone-texture.001</object-name>
 </effect>
 
 <animation>
  <type>select</type>
  <object-name>Cone</object-name>
  <object-name>Cone-texture</object-name>
+         <condition>
+          <and>
+                <not><property>/sim/rendering/rembrandt/enabled</property></not>
+		<property>sim/multiplay/generic/int[19]</property>
+          </and>
+         </condition>
+</animation>
+
+<animation>
+ <type>select</type>
+ <object-name>Cone.001</object-name>
+ <object-name>Cone-texture.001</object-name>
          <condition>
           <and>
                 <not><property>/sim/rendering/rembrandt/enabled</property></not>
@@ -525,11 +530,15 @@
       <factor-prop>sim/multiplay/generic/int[13]</factor-prop>
     </emission>
   </animation>
-  
+
+  <model>
+    <path>Aircraft/followme/Models/Instruments/Lights/orange_lights.xml</path>
+  </model>
+
   <!-- Warning lights-->
   
 <model> 
- <path>Aircraft/followme/Models/warninglight.xml</path>
+ <path>Aircraft/followme/Models/Instruments/Lights/warninglight.xml</path>
  <offsets> 
   <x-m> 3.42</x-m>
   <y-m>-0.5</y-m>
@@ -538,7 +547,7 @@
 </model>
 
 <model> 
- <path>Aircraft/followme/Models/warninglight.xml</path>
+ <path>Aircraft/followme/Models/Instruments/Lights/warninglight.xml</path>
  <offsets> 
   <x-m> 3.42</x-m>
   <y-m> 0.5</y-m>
@@ -546,8 +555,12 @@
  </offsets>
 </model>
 
-<!-- Braking lights-->
-  
+<!--  Rear lights  -->
+  <model>
+    <path>Aircraft/followme/Models/Instruments/Lights/red_lights.xml</path>
+  </model>
+
+<!-- Braking lights-->  
 <effect>
  <inherits-from>Effects/model-transparent</inherits-from>
   <object-name>braking_lights</object-name>
@@ -562,15 +575,13 @@
   <red>1.0</red>
   <green>0.0</green>
   <blue>0.0</blue>
-  <factor-prop>sim/multiplay/generic/float[15]</factor-prop>
+  <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
  </emission>
- <condition>
-  
+ <condition>  
   <greater-than>
    <property>sim/multiplay/generic/float[15]</property>
    <value>0.1</value>
-  </greater-than>
-  
+  </greater-than>  
  </condition>
 </animation>
 
@@ -582,15 +593,13 @@
   <red>1.0</red>
   <green>0.0</green>
   <blue>0.0</blue>
-  <factor-prop>sim/multiplay/generic/float[16]</factor-prop>
+  <factor-prop>sim/multiplay/generic/int[5]</factor-prop>
  </emission>
- <condition>
-   
+ <condition>   
   <greater-than>
    <property>sim/multiplay/generic/float[16]</property>
    <value>0.1</value>
-  </greater-than>
-  
+  </greater-than>  
  </condition>
 </animation>
 
@@ -605,6 +614,8 @@
   <pitch-deg>-18.0</pitch-deg>
  </offsets>
 </model>
+
+<!-- sign for indicators -->
 <model> 
  <path>Aircraft/followme/Models/Instruments/Switch-Lights/pb3.xml</path>
  <offsets> 
@@ -614,6 +625,7 @@
   <pitch-deg>-18.0</pitch-deg>
  </offsets>
 </model>
+
 <model> 
  <path>Aircraft/followme/Models/Instruments/switch-warninglights.xml</path>
  <offsets> 
@@ -623,6 +635,8 @@
   <pitch-deg>-18.0</pitch-deg>
  </offsets>
 </model>
+
+<!-- sign for warninglights -->
 <model> 
  <path>Aircraft/followme/Models/Instruments/Switch-Lights/pb2.xml</path>
  <offsets> 
@@ -632,15 +646,19 @@
   <pitch-deg>-18.0</pitch-deg>
  </offsets>
 </model>
+
+<!-- switch for standlicht -->
 <model> 
  <path>Aircraft/followme/Models/Instruments/switch-position-lights.xml</path>
  <offsets> 
   <x-m>1.306</x-m>
-  <y-m>-0.52</y-m>    <!-- ORIGINAL center = <y-m>-0.07</y-m> -->
+  <y-m>-0.52</y-m>
   <z-m>0.935</z-m>
   <pitch-deg>-18.0</pitch-deg>
  </offsets>
 </model>
+
+<!-- sign for standlicht -->
 <model> 
  <path>Aircraft/followme/Models/Instruments/Switch-Lights/pb.xml</path>
  <offsets> 
@@ -650,6 +668,8 @@
   <pitch-deg>-18.0</pitch-deg>
  </offsets>
 </model>
+
+<!-- switch for fernlicht -->
 <model> 
  <path>Aircraft/followme/Models/Instruments/switch-lights.xml</path>
  <offsets> 
@@ -660,6 +680,8 @@
   <pitch-deg>-8.0</pitch-deg>
  </offsets>
 </model>
+
+<!-- sign for fernlicht -->
 <model> 
  <path>Aircraft/followme/Models/Instruments/Switch-Lights/pb0.xml</path>
  <offsets> 
@@ -669,6 +691,8 @@
   <pitch-deg>-18.0</pitch-deg>
  </offsets>
 </model>
+
+<!-- switch for hupe -->
 <model> 
  <path>Aircraft/followme/Models/Instruments/switch-horn.xml</path>
  <offsets> 
@@ -679,6 +703,8 @@
   <pitch-deg>-5.0</pitch-deg>
  </offsets>
 </model>
+
+<!-- sign for hupe -->
 <model> 
  <path>Aircraft/followme/Models/Instruments/Switch-Lights/pb4.xml</path>
  <offsets> 
@@ -700,18 +726,6 @@
   <pitch-deg>-15.0</pitch-deg>
     </offsets>
   </model>
-
-
-<!--  Rear lights  -->
-
-  <model>
-    <path>Aircraft/followme/Models/Instruments/Lights/red_lights.xml</path>
-  </model>
-
-  <model>
-    <path>Aircraft/followme/Models/Instruments/Lights/orange_lights.xml</path>
-  </model>
-
   
 <!--message setting HerbyW 2016-->
 <model> 

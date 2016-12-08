@@ -9,12 +9,13 @@
 
   <path>control-unit.ac</path>
 
-  <!--indicators, warn blink 1,2 -->
+  <!--indicators, warn blink 1,2,3 -->
 
   <animation>
     <type>material</type>
     <object-name>S1out</object-name>
     <object-name>S2out</object-name>
+    <object-name>S3out</object-name>
     <emission>
       <factor-prop>controls/switches/gauge-light</factor-prop>
       <red>   0.05 </red>
@@ -27,6 +28,7 @@
     <type>select</type>
     <object-name>S1out</object-name>
     <object-name>S2out</object-name>
+    <object-name>S3out</object-name>
     <condition>
     <not-equals>
      <property>sim/model/lights/indicators/state</property>
@@ -39,52 +41,6 @@
     <type>material</type>
     <object-name>S1on</object-name>
     <object-name>S2on</object-name>
-    <emission>
-      <factor-prop>controls/switches/gauge-light</factor-prop>
-      <red>   1.0 </red>
-      <green> 1.0 </green>
-      <blue>  1.0 </blue>
-    </emission>
-  </animation>
-  
-  <animation>
-    <type>select</type>
-    <object-name>S1on</object-name>
-    <object-name>S2on</object-name>
-    <condition>
-    <equals>
-     <property>sim/model/lights/indicators/state</property>
-     <value>1</value>
-    </equals>
-   </condition> 
-  </animation>
-  
-  <!--warn lamps 3 -->
-  
-  <animation>
-    <type>material</type>
-    <object-name>S3out</object-name>
-    <emission>
-      <factor-prop>controls/switches/gauge-light</factor-prop>
-      <red>   0.05 </red>
-      <green> 0.05 </green>
-      <blue>  0.05 </blue>
-    </emission>
-  </animation>
-  
-  <animation>
-    <type>select</type>
-    <object-name>S3out</object-name>
-    <condition>
-    <not-equals>
-     <property>sim/model/lights/indicators/state</property>
-     <value>1</value>
-    </not-equals>
-   </condition> 
-  </animation>
-  
-  <animation>
-    <type>material</type>
     <object-name>S3on</object-name>
     <emission>
       <factor-prop>controls/switches/gauge-light</factor-prop>
@@ -96,6 +52,8 @@
   
   <animation>
     <type>select</type>
+    <object-name>S1on</object-name>
+    <object-name>S2on</object-name>
     <object-name>S3on</object-name>
     <condition>
     <equals>

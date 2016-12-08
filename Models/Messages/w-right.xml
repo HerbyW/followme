@@ -77,16 +77,6 @@
       <property>sim/multiplay/generic/string[2]</property>
       <value>right</value>
     </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/string[4]</property>
-      <value>Right</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/string[3]</property>
-      <value>Sign/right.png</value>
-    </binding>
   </action>
 </animation>
 

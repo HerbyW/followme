@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<PropertyList>
+ <path>sign.ac</path>
+ 
+
+  <animation>
+    <type>material</type>
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+    <type>select</type>     
+    <object-name>blanco</object-name>
+    <condition>
+      <equals>
+	<property>sim/multiplay/generic/string[2]</property>
+	<value>blanco</value>
+      </equals>
+    </condition> 
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+  
+    <animation>
+    <type>select</type>     
+    <object-name>followme</object-name>
+    <condition>
+      <equals>
+	<property>sim/multiplay/generic/string[2]</property>
+	<value>follow_me</value>
+      </equals>
+    </condition> 
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+  
+    <animation>
+    <type>select</type>     
+    <object-name>left</object-name>
+    <condition>
+      <equals>
+	<property>sim/multiplay/generic/string[2]</property>
+	<value>left</value>
+      </equals>
+    </condition> 
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+  
+    <animation>
+    <type>select</type>     
+    <object-name>right</object-name>
+    <condition>
+      <equals>
+	<property>sim/multiplay/generic/string[2]</property>
+	<value>right</value>
+      </equals>
+    </condition> 
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+  
+    <animation>
+    <type>select</type>     
+    <object-name>slowdown</object-name>
+    <condition>
+      <equals>
+	<property>sim/multiplay/generic/string[2]</property>
+	<value>slow_down</value>
+      </equals>
+    </condition> 
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+  
+    <animation>
+    <type>select</type>     
+    <object-name>stop</object-name>
+    <condition>
+      <equals>
+	<property>sim/multiplay/generic/string[2]</property>
+	<value>stop</value>
+      </equals>
+    </condition> 
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+  
+    <animation>
+    <type>select</type>     
+    <object-name>wait</object-name>
+    <condition>
+      <equals>
+	<property>sim/multiplay/generic/string[2]</property>
+	<value>wait</value>
+      </equals>
+    </condition> 
+    <emission>
+      <factor-prop>controls/switches/gauge-light</factor-prop>
+      <red>   0.35 </red>
+      <green> 0.35 </green>
+      <blue>  0.35 </blue>
+    </emission>
+  </animation>
+
+
+</PropertyList>

@@ -15,7 +15,7 @@ s - autostart
 
 q - horn
 
-Tab - reset
+r - reset
 
 d - Light Beam
 
@@ -46,5 +46,12 @@ Update to version 2.0 by Herbert Wagner 05/2016:
            -some more Panel addings from Sig-Nal
            -red, white and orange liveries added
            -braking sound and effect added
+           
+Update to version 2.3 by Herbert Wagner 12/2016:
+           - new light systems
+           - new sign animations
+           - all MP animations fixed
+           - not compatible with old model
+      
 
 #######################################################################################################

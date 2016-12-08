@@ -60,7 +60,7 @@
 		<cockpit type="int">5</cockpit>
 		<model type="int">5</model>
 	</rating>
-	<aircraft-version type="string">2.2</aircraft-version>.
+	<aircraft-version type="string">2.3</aircraft-version>.
 	<flight-model>jsb</flight-model>
 	<aero>followme</aero>
 
@@ -71,8 +71,6 @@
 	  </livery>
 	  <message archive="y">
 	    <file type="string">follow_me</file>
-	    <name type="string">Follow Me</name>
-	    <texture-message type="string">Sign/follow_me.png</texture-message>
 	  </message>  
 	  <lights>
 	    <indicators><state type="bool">0</state></indicators>
@@ -183,7 +181,7 @@
 	    <name>d</name>
 	    <desc>Flash Beam</desc>
 	  </key>
-<text>Welcome to the Followme-car version 2.2 for Flightgear with lots of new functions!
+<text>Welcome to the Followme-car version 2.3 for Flightgear with lots of new functions!
 
 All functions are settable in the cockpit.
 3 switches: lights / message-warning-lights / indicators
@@ -211,7 +209,7 @@ push Starter button
 - full Rembrandt and multiplayer support for all functions, (works perfect without Rembrandt also)
 - no killer grass problems, driving on all surfaces possible
     
-Development by Herbert Wagner 05/2016, based on the default followme from Flightgear (Gijs de Rooy), fully compatible with old model
+Development by Herbert Wagner 12/2016, based on the default followme from Flightgear (Gijs de Rooy), not compatible with old model
 </text>
 </help>
 	
@@ -273,8 +271,6 @@ Development by Herbert Wagner 05/2016, based on the default followme from Flight
 	    <string n="0" alias="/sim/multiplay/callsign"/>
 	    <string n="1" alias="/fdm/jsbsim/environment/terrain-names"/>
 	    <string n="2" alias="/sim/model/message/file">follow_me</string>
-	    <string n="3" alias="/sim/model/message/texture-message">Sign/follow_me.png</string>
-	    <string n="4" alias="/sim/model/message/name">Follow Me</string>
 	  </generic>
 	</multiplay>
   </sim>

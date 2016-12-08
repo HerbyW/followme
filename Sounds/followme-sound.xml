@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
- <!--
-    #########################################################################################
-    modified or copyright by Herbert Wagner 05/2016 for followme car (Flightgear)
-    ##########################################################################################
+<!--
+#########################################################################################
+modified or copyright by Herbert Wagner 05/2016 for followme car (Flightgear)
+##########################################################################################
 -->
 <PropertyList>
   <fx>
@@ -32,14 +32,14 @@
       <path>Aircraft/followme/Sounds/Renault4-running.wav</path>
       <condition>
 	<and>
-	<equals>
-	  <property>sim/multiplay/generic/float[1]</property>
-	  <value>0</value>
-	</equals>
-	<equals>
-	  <property>sim/multiplay/generic/int[6]</property>
-	  <value>1</value>
-	</equals>
+	  <equals>
+	    <property>sim/multiplay/generic/float[1]</property>
+	    <value>0</value>
+	  </equals>
+	  <equals>
+	    <property>sim/multiplay/generic/int[6]</property>
+	    <value>1</value>
+	  </equals>
 	</and>
       </condition>
       <volume>
@@ -60,14 +60,14 @@
       <path>Aircraft/followme/Sounds/Renault4-speed.wav</path>
       <condition>
 	<and>
-	<not-equals>
-	  <property>sim/multiplay/generic/float[1]</property>
-	  <value>0</value>
-	</not-equals>
-	<equals>
-	  <property>sim/multiplay/generic/int[6]</property>
-	  <value>1</value>
-	</equals>
+	  <not-equals>
+	    <property>sim/multiplay/generic/float[1]</property>
+	    <value>0</value>
+	  </not-equals>
+	  <equals>
+	    <property>sim/multiplay/generic/int[6]</property>
+	    <value>1</value>
+	  </equals>
 	</and>
       </condition>
       <volume>
@@ -93,14 +93,14 @@
       <path>Aircraft/followme/Sounds/Renault4-drifting.wav</path>
       <condition>
 	<or>
-	<greater-than>
-	  <property>sim/multiplay/generic/float[9]</property>
-	  <value>8000</value>
-	</greater-than>
-	<less-than>
-	  <property>sim/multiplay/generic/float[9]</property>
-	  <value>-8000</value>
-	</less-than>
+	  <greater-than>
+	    <property>sim/multiplay/generic/float[9]</property>
+	    <value>8000</value>
+	  </greater-than>
+	  <less-than>
+	    <property>sim/multiplay/generic/float[9]</property>
+	    <value>-8000</value>
+	  </less-than>
 	</or>
       </condition>
       <volume>
@@ -151,177 +151,178 @@
     </brake>
     
     <!-- Doors -->
-  
+    
     <door>
       <name>opening1</name>
       <mode>once</mode>
       <path>Aircraft/followme/Sounds/Renault4-dooropen.wav</path>
       <condition>
-       
+	
 	<greater-than>
-          <property>sim/multiplay/generic/float[2]</property>
-          <value>0.0</value>
-        </greater-than>
+	  <property>sim/multiplay/generic/float[2]</property>
+	  <value>0.0</value>
+	</greater-than>
 	
-      </condition>
-      <volume>
-        <factor>1</factor>
-      </volume>
-      <reference-dist>10</reference-dist>
-      <max-dist>500</max-dist>
-    </door>
-    
-    <door>
-      <name>opening2</name>
-      <mode>once</mode>
-      <path>Aircraft/followme/Sounds/Renault4-dooropen.wav</path>
-      <condition>
-       
-	<greater-than>
-          <property>sim/multiplay/generic/float[3]</property>
-          <value>0.0</value>
-        </greater-than>
+	</condition>
+	<volume>
+	  <factor>1</factor>
+	</volume>
+	<reference-dist>10</reference-dist>
+	<max-dist>500</max-dist>
+      </door>
+      
+      <door>
+	<name>opening2</name>
+	<mode>once</mode>
+	<path>Aircraft/followme/Sounds/Renault4-dooropen.wav</path>
+	<condition>
+	  
+	  <greater-than>
+	    <property>sim/multiplay/generic/float[3]</property>
+	    <value>0.0</value>
+	  </greater-than>
+	  
+	  </condition>
+	  <volume>
+	    <factor>1</factor>
+	  </volume>
+	  <reference-dist>10</reference-dist>
+	  <max-dist>500</max-dist>
+	</door>
 	
-      </condition>
-      <volume>
-        <factor>1</factor>
-      </volume>
-      <reference-dist>10</reference-dist>
-      <max-dist>500</max-dist>
-    </door>
-    
-    <door>
-      <name>opening3</name>
-      <mode>once</mode>
-      <path>Aircraft/followme/Sounds/Renault4-dooropen.wav</path>
-      <condition>
-       
-	<greater-than>
-          <property>sim/multiplay/generic/float[4]</property>
-          <value>0.0</value>
-        </greater-than>
-	
-      </condition>
-      <volume>
-        <factor>1</factor>
-      </volume>
-      <reference-dist>10</reference-dist>
-      <max-dist>500</max-dist>
-    </door>
-    
-    <door>
-      <name>opening4</name>
-      <mode>once</mode>
-      <path>Aircraft/followme/Sounds/Renault4-dooropen.wav</path>
-      <condition>
-       
-	<greater-than>
-          <property>sim/multiplay/generic/float[5]</property>
-          <value>0.0</value>
-        </greater-than>
-       
-      </condition>
-      <volume>
-        <factor>1</factor>
-      </volume>
-      <reference-dist>10</reference-dist>
-      <max-dist>500</max-dist>
-    </door>
-    
-    <doorc>
-      <name>closing1</name>
-      <mode>once</mode>
-      <path>Aircraft/followme/Sounds/Renault4-doorclose.wav</path>
-      <condition>
-       
-	<less-than>
-          <property>sim/multiplay/generic/float[2]</property>
-          <value>0.02</value>
-        </less-than>
-	
-      </condition>
-      <volume>
-        <factor>1</factor>
-      </volume>
-      <reference-dist>10</reference-dist>
-      <max-dist>500</max-dist>
-    </doorc>
-    
-    <doorc>
-      <name>closing2</name>
-      <mode>once</mode>
-      <path>Aircraft/followme/Sounds/Renault4-doorclose.wav</path>
-      <condition>
-       
-	<less-than>
-          <property>sim/multiplay/generic/float[3]</property>
-          <value>0.02</value>
-        </less-than>
-	
-      </condition>
-      <volume>
-        <factor>1</factor>
-      </volume>
-      <reference-dist>10</reference-dist>
-      <max-dist>500</max-dist>
-    </doorc>
-    
-    <doorc>
-      <name>closing3</name>
-      <mode>once</mode>
-      <path>Aircraft/followme/Sounds/Renault4-doorclose.wav</path>
-      <condition>
-       
-	<less-than>
-          <property>sim/multiplay/generic/float[4]</property>
-          <value>0.02</value>
-        </less-than>
-	
-      </condition>
-      <volume>
-        <factor>1</factor>
-      </volume>
-      <reference-dist>10</reference-dist>
-      <max-dist>500</max-dist>
-    </doorc>
-    
-    <doorc>
-      <name>closing4</name>
-      <mode>once</mode>
-      <path>Aircraft/followme/Sounds/Renault4-doorclose.wav</path>
-      <condition>
-       
-	<less-than>
-          <property>sim/multiplay/generic/float[5]</property>
-          <value>0.02</value>
-        </less-than>
-	
-      </condition>
-      <volume>
-        <factor>1</factor>
-      </volume>
-      <reference-dist>10</reference-dist>
-      <max-dist>500</max-dist>
-    </doorc>
-    
-    <horn>
-      <name>horn</name>
-      <mode>once</mode>
-      <path>Aircraft/followme/Sounds/Renault4-horn.wav</path>
-      <condition>
-       
-	    <equals>
-          <property>sim/multiplay/generic/int[18]</property>
-          <value>1</value>
-        </equals>
-	
-      </condition>
-      <volume>
-        <factor>1</factor>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>
-    </horn>
-    
-    </fx>
-</PropertyList>
+	<door>
+	  <name>opening3</name>
+	  <mode>once</mode>
+	  <path>Aircraft/followme/Sounds/Renault4-dooropen.wav</path>
+	  <condition>
+	    
+	    <greater-than>
+	      <property>sim/multiplay/generic/float[4]</property>
+	      <value>0.0</value>
+	    </greater-than>
+	    
+	    </condition>
+	    <volume>
+	      <factor>1</factor>
+	    </volume>
+	    <reference-dist>10</reference-dist>
+	    <max-dist>500</max-dist>
+	  </door>
+	  
+	  <door>
+	    <name>opening4</name>
+	    <mode>once</mode>
+	    <path>Aircraft/followme/Sounds/Renault4-dooropen.wav</path>
+	    <condition>
+	      
+	      <greater-than>
+		<property>sim/multiplay/generic/float[5]</property>
+		<value>0.0</value>
+	      </greater-than>
+	      
+	      </condition>
+	      <volume>
+		<factor>1</factor>
+	      </volume>
+	      <reference-dist>10</reference-dist>
+	      <max-dist>500</max-dist>
+	    </door>
+	    
+	    <doorc>
+	      <name>closing1</name>
+	      <mode>once</mode>
+	      <path>Aircraft/followme/Sounds/Renault4-doorclose.wav</path>
+	      <condition>
+		
+		<less-than>
+		  <property>sim/multiplay/generic/float[2]</property>
+		  <value>0.02</value>
+		</less-than>
+		
+		</condition>
+		<volume>
+		  <factor>1</factor>
+		</volume>
+		<reference-dist>10</reference-dist>
+		<max-dist>500</max-dist>
+	      </doorc>
+	      
+	      <doorc>
+		<name>closing2</name>
+		<mode>once</mode>
+		<path>Aircraft/followme/Sounds/Renault4-doorclose.wav</path>
+		<condition>
+		  
+		  <less-than>
+		    <property>sim/multiplay/generic/float[3]</property>
+		    <value>0.02</value>
+		  </less-than>
+		  
+		  </condition>
+		  <volume>
+		    <factor>1</factor>
+		  </volume>
+		  <reference-dist>10</reference-dist>
+		  <max-dist>500</max-dist>
+		</doorc>
+		
+		<doorc>
+		  <name>closing3</name>
+		  <mode>once</mode>
+		  <path>Aircraft/followme/Sounds/Renault4-doorclose.wav</path>
+		  <condition>
+		    
+		    <less-than>
+		      <property>sim/multiplay/generic/float[4]</property>
+		      <value>0.02</value>
+		    </less-than>
+		    
+		    </condition>
+		    <volume>
+		      <factor>1</factor>
+		    </volume>
+		    <reference-dist>10</reference-dist>
+		    <max-dist>500</max-dist>
+		  </doorc>
+		  
+		  <doorc>
+		    <name>closing4</name>
+		    <mode>once</mode>
+		    <path>Aircraft/followme/Sounds/Renault4-doorclose.wav</path>
+		    <condition>
+		      
+		      <less-than>
+			<property>sim/multiplay/generic/float[5]</property>
+			<value>0.02</value>
+		      </less-than>
+		      
+		      </condition>
+		      <volume>
+			<factor>1</factor>
+		      </volume>
+		      <reference-dist>10</reference-dist>
+		      <max-dist>500</max-dist>
+		    </doorc>
+		    
+		    <horn>
+		      <name>horn</name>
+		      <mode>once</mode>
+		      <path>Aircraft/followme/Sounds/Renault4-horn.wav</path>
+		      <condition>
+			
+			<equals>
+			  <property>sim/multiplay/generic/int[18]</property>
+			  <value>1</value>
+			</equals>
+			
+			</condition>
+			<volume>
+			  <factor>1</factor>
+			</volume>
+			<reference-dist>100</reference-dist>
+			<max-dist>1000</max-dist>
+		      </horn>
+		      
+		      </fx>
+		    </PropertyList>
+		    

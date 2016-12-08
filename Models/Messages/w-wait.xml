@@ -77,16 +77,6 @@
       <property>sim/multiplay/generic/string[2]</property>
       <value>wait</value>
     </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/string[4]</property>
-      <value>Wait</value>
-    </binding>
-    <binding>
-      <command>property-assign</command>
-      <property>sim/multiplay/generic/string[3]</property>
-      <value>Sign/wait.png</value>
-    </binding>
   </action>
 </animation>
 
