@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+by HerbyW 2015
+
+-->
+<system name="crash-detect">
+  
+  <channel name="Over-G">
+    <switch name="systems/crash-detect/over-g">
+      <test logic="OR" value="1">
+	accelerations/Nz gt 25.0
+	accelerations/Nz lt -25.0
+      </test>
+    </switch>
+  </channel>
+  
+  <channel name="freeze">
+    <switch name="systems/crash-detect/crashed-sw">
+      <default value="systems/crash-detect/crashed-cmd"/>
+      <test logic="AND" value="1">
+	systems/crash-detect/over-g == 1
+      </test>
+      <test logic="AND" value="0">
+	simulation/sim-time-sec lt 2.0
+      </test>
+      <output>systems/crash-detect/crashed-cmd</output>
+    </switch>
+    
+    
+    <kinematic name="systems/crash-detect/crashed">
+      <input>systems/crash-detect/crashed-cmd</input>
+      <traverse>
+	<setting>
+	  <position> 0 </position>
+	  <time>  0 </time>
+	</setting>
+	<setting>
+	  <position> 1 </position>
+	  <time> 1.5</time>
+	</setting>
+      </traverse>
+    </kinematic>
+    
+    </channel>
+
+</system>

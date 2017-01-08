@@ -225,6 +225,8 @@
       </tank>
       
     </propulsion>
+    
+    <system file="crash-detect"/>
 
     <flight_control name="Truck">
       

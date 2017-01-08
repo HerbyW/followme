@@ -179,3 +179,13 @@ setlistener("/controls/lighting/headlight2", func {
  {     setprop("/controls/lighting/headlight2", 1); }
 });
 
+####################################################################
+setlistener("/fdm/jsbsim/systems/crash-detect/crashed-cmd", func { 
+  
+  if (getprop("/fdm/jsbsim/systems/crash-detect/crashed-cmd") > 0.95)
+  {
+          
+	  setprop("/fdm/jsbsim/simulation/reset", 1)
+  }  
+}
+);
