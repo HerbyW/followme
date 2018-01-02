@@ -540,8 +540,8 @@
 <model> 
  <path>Aircraft/followme/Models/Instruments/Lights/warninglight.xml</path>
  <offsets> 
-  <x-m> 3.42</x-m>
-  <y-m>-0.5</y-m>
+  <x-m> 3.44</x-m>
+  <y-m>-0.52</y-m>
   <z-m> 1.75</z-m>
  </offsets>
 </model>
@@ -549,8 +549,8 @@
 <model> 
  <path>Aircraft/followme/Models/Instruments/Lights/warninglight.xml</path>
  <offsets> 
-  <x-m> 3.42</x-m>
-  <y-m> 0.5</y-m>
+  <x-m> 3.44</x-m>
+  <y-m> 0.52</y-m>
   <z-m> 1.75</z-m>
  </offsets>
 </model>
@@ -863,7 +863,7 @@
  <path>Aircraft/followme/Models/Effects/smoke.xml</path>
  <offsets> 
   <x-m> 3.7</x-m>
-  <y-m>-0.6</y-m>
+  <y-m>-0.66</y-m>
   <z-m> 0.1</z-m>
   <pitch-deg>0.0</pitch-deg>
  </offsets>
@@ -872,7 +872,7 @@
  <path>Aircraft/followme/Models/Effects/smoke.xml</path>
  <offsets> 
   <x-m> 3.7</x-m>
-  <y-m> 0.6</y-m>
+  <y-m> 0.62</y-m>
   <z-m> 0.1</z-m>
   <pitch-deg>0.0</pitch-deg>
  </offsets>
@@ -882,7 +882,7 @@
  <path>Aircraft/followme/Models/Effects/smoke-grass.xml</path>
  <offsets> 
   <x-m> 3.7</x-m>
-  <y-m>-0.6</y-m>
+  <y-m>-0.66</y-m>
   <z-m> 0.1</z-m>
   <pitch-deg>0.0</pitch-deg>
  </offsets>
@@ -891,7 +891,7 @@
  <path>Aircraft/followme/Models/Effects/smoke-grass.xml</path>
  <offsets> 
   <x-m> 3.7</x-m>
-  <y-m> 0.6</y-m>
+  <y-m> 0.62</y-m>
   <z-m> 0.1</z-m>
   <pitch-deg>0.0</pitch-deg>
  </offsets>
@@ -901,7 +901,7 @@
  <path>Aircraft/followme/Models/Effects/smoke-sand.xml</path>
  <offsets> 
   <x-m> 3.7</x-m>
-  <y-m>-0.6</y-m>
+  <y-m>-0.66</y-m>
   <z-m> 0.1</z-m>
   <pitch-deg>0.0</pitch-deg>
  </offsets>
@@ -910,7 +910,7 @@
  <path>Aircraft/followme/Models/Effects/smoke-sand.xml</path>
  <offsets> 
   <x-m> 3.7</x-m>
-  <y-m> 0.6</y-m>
+  <y-m> 0.62</y-m>
   <z-m> 0.1</z-m>
   <pitch-deg>0.0</pitch-deg>
  </offsets>
@@ -920,7 +920,7 @@
  <path>Aircraft/followme/Models/Effects/smoke-snow.xml</path>
  <offsets> 
   <x-m> 3.7</x-m>
-  <y-m>-0.6</y-m>
+  <y-m>-0.66</y-m>
   <z-m> 0.1</z-m>
   <pitch-deg>0.0</pitch-deg>
  </offsets>
@@ -929,7 +929,7 @@
  <path>Aircraft/followme/Models/Effects/smoke-snow.xml</path>
  <offsets> 
   <x-m> 3.7</x-m>
-  <y-m> 0.6</y-m>
+  <y-m> 0.62</y-m>
   <z-m> 0.1</z-m>
   <pitch-deg>0.0</pitch-deg>
  </offsets>
@@ -939,7 +939,7 @@
  <path>Aircraft/followme/Models/Effects/tyres.xml</path>
  <offsets> 
   <x-m> 3.7</x-m>
-  <y-m>-0.6</y-m>
+  <y-m>-0.66</y-m>
   <z-m> 0.05</z-m>
  </offsets>
 </model>
@@ -947,7 +947,7 @@
  <path>Aircraft/followme/Models/Effects/tyres.xml</path>
  <offsets> 
   <x-m> 3.7</x-m>
-  <y-m> 0.6</y-m>
+  <y-m> 0.62</y-m>
   <z-m> 0.05</z-m>
  </offsets>
 </model>

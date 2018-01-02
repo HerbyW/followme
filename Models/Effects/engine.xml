@@ -83,7 +83,7 @@
 			<life-sec>
 				<value>3</value>
 			</life-sec>
-			<mass-kg>0.40</mass-kg>
+			<mass-kg>0.32</mass-kg>
 			<radius-m>0.40</radius-m>
 		</particle>
 		<program>

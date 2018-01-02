@@ -19,6 +19,18 @@
            -some more Panel addings from Sig-Nal
            -red, white and orange liveries added
            -braking sound and effect added
+           
+      Update to version 2.3 by Herbert Wagner 12/2016:
+           - new light systems
+           - new sign animations
+           - all MP animations fixed
+           - not compatible with old model
+      Update to version 2.4 by Herbert Wagner 01/2017
+           - proper crash handling
+           - small fixes
+      Update to version 2.5 by Herbert Wagner 01/2018
+           - adjusting tyre effect
+           - adding key for changing Pilot - Model View
   -->
   
   <controls>
@@ -60,7 +72,7 @@
 		<cockpit type="int">5</cockpit>
 		<model type="int">5</model>
 	</rating>
-	<aircraft-version type="string">2.3</aircraft-version>.
+	<aircraft-version type="string">2.5</aircraft-version>.
 	<flight-model>jsb</flight-model>
 	<aero>followme</aero>
 
@@ -181,7 +193,11 @@
 	    <name>d</name>
 	    <desc>Flash Beam</desc>
 	  </key>
-<text>Welcome to the Followme-car version 2.3 for Flightgear with lots of new functions!
+	  <key>
+	    <name>y</name>
+	    <desc>change Pilot Model View</desc>
+	  </key>
+<text>Welcome to the Followme-car version 2.4 for Flightgear with lots of new functions!
 
 All functions are settable in the cockpit.
 3 switches: lights / message-warning-lights / indicators
@@ -355,6 +371,16 @@ Development by Herbert Wagner 12/2016, based on the default followme from Flight
            <value type="int">1</value> 
            <value type="int">0</value>
         </binding>
+      </key>
+      <key n="121">
+	<name>y</name>
+	<desc>Change Pilot Model View</desc>
+	<binding>
+	  <command>property-cycle</command>
+	  <property>/sim/current-view/view-number</property>  
+	  <value>0</value>
+	  <value>7</value>
+	</binding>
       </key>
   </keyboard>
 </input>

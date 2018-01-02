@@ -39,13 +39,13 @@
 			<type>point</type>
 		</placer>
 		<shooter>
-			<theta-min-deg>-5</theta-min-deg>
-			<theta-max-deg>5</theta-max-deg>
-			<phi-min-deg>-5</phi-min-deg>
-			<phi-max-deg> 5</phi-max-deg>
+			<theta-min-deg>-0</theta-min-deg>
+			<theta-max-deg>0</theta-max-deg>
+			<phi-min-deg>-0</phi-min-deg>
+			<phi-max-deg> 0</phi-max-deg>
 			<speed-mps>
 				<value>25</value>
-				<spread>3.5</spread>
+				<spread>0</spread>
 			</speed-mps>
 			<rotation-speed>
 				<x-min-deg-sec>0</x-min-deg-sec>
@@ -58,8 +58,8 @@
 		</shooter>
 		<counter>
 			<particles-per-sec>
-				<value>10</value>
-				<spread>5</spread>
+				<value>30</value>
+				<spread>0</spread>
 			</particles-per-sec>
 		</counter>
 		<particle>
@@ -88,7 +88,7 @@
 			<life-sec>
 				<value>4</value>
 			</life-sec>
-			<mass-kg>0.35</mass-kg>
+			<mass-kg>0.34</mass-kg>
 			<radius-m>0.40</radius-m>
 		</particle>
 		<program>

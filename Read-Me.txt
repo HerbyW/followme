@@ -1,6 +1,6 @@
 #######################################################################################################
 
-Arcraft development for Flightgear by Herbert Wagner 2014-2016                          Model: followme
+Arcraft development for Flightgear by Herbert Wagner 2014-2018                          Model: followme
 
 This file is licenced under the terms mentioned in this file.
 Everything is GNU GPLv2+ License.
@@ -52,6 +52,12 @@ Update to version 2.3 by Herbert Wagner 12/2016:
            - new sign animations
            - all MP animations fixed
            - not compatible with old model
+Update to version 2.4 by Herbert Wagner 01/2017
+           - proper crash handling
+           - small fixes
+Update to version 2.5 by Herbert Wagner 01/2018
+           - adjusting tyre, smoke, drifting, gras and snow effect
+           - adding key for changing Pilot - Model View
       
 
 #######################################################################################################
