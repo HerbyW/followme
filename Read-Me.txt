@@ -61,3 +61,9 @@ Update to version 2.5 by Herbert Wagner 01/2018
       
 
 #######################################################################################################
+
+LICENSE: This aircraft is released under the GNU GPL v2 License, see COPYING file.
+
+Installation: Unzip and copy into the aircraft folder.
+
+See aircraft help for detailed instructions.
